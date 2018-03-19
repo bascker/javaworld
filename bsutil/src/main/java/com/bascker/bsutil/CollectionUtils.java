@@ -6,18 +6,19 @@ import java.util.function.Consumer;
 
 /**
  * 集合工具类
+ *
+ * @author bascker
  */
 public class CollectionUtils {
 
-    private CollectionUtils() {
-    }
+    private CollectionUtils() {}
 
     /**
      * Desc sort
      *
      * @param numbers
      */
-    public static void sortDesc(final List<Integer> numbers) {
+    public static void sortDesc (final List<Integer> numbers) {
         numbers.sort((o1, o2) -> {
             if (o1 > o2) {
                 return -1;

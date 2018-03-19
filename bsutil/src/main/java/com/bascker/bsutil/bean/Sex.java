@@ -1,7 +1,7 @@
 package com.bascker.bsutil.bean;
 
 /**
- * Male
+ * Sex
  *
  * @author bascker
  */

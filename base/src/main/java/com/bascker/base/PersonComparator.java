@@ -7,8 +7,8 @@ import java.util.Comparator;
 /**
  * PersonComparator: Comparator Sample
  * 1.Comparator 接口
- * 1.1 比较器接口
- * 1.2 通过实现 Comparator 来定义我们自己的比较器，对集合对象或数组对象进行排序
+ *  1.1 比较器接口
+ *  1.2 通过实现 Comparator 来定义我们自己的比较器，对集合对象或数组对象进行排序
  *
  * @author bascker
  */

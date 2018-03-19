@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * Collections 的使用：操作集合的工具类
+ * @author backer
  */
 public class CollectionsSample {
 

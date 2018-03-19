@@ -13,24 +13,24 @@ import java.net.URLClassLoader;
 /**
  * ClassLoader Sample
  * 1.BootstrapClassLoader
- * 1.1 最顶层的类加载器
- * 1.2 用于加载 %JAVA_HOME%\lib 下的核心类库
- * <p>
+ *  1.1 最顶层的类加载器
+ *  1.2 用于加载 %JAVA_HOME%\lib 下的核心类库
+ *
  * 2.ExtClassLoader
- * 2.1 扩展类加载器
- * 2.2 用于加载 %JAVA_HOME%\lib\ext 下的类库
- * <p>
+ *  2.1 扩展类加载器
+ *  2.2 用于加载 %JAVA_HOME%\lib\ext 下的类库
+ *
  * 3.AppClassLoader
- * 3.1 也叫做 SystemClassLoader
- * 3.2 用于加载应用 classpath 下的类文件
- * <p>
+ *  3.1 也叫做 SystemClassLoader
+ *  3.2 用于加载应用 classpath 下的类文件
+ *
  * 4.Launcher
- * 4.1 {@link Launcher} 是 JVM 的入口应用
- * 4.2 Launcher 初始化了 ExtClassLoader 和 AppClassLoader(看源码)
- * <p>
+ *  4.1 {@link Launcher} 是 JVM 的入口应用
+ *  4.2 Launcher 初始化了 ExtClassLoader 和 AppClassLoader(看源码)
+ *
  * 5.ClassLoader:
- * 5.1 是 URLClassLoader 的父类
- * 5.2 URLClassLoader 是 Launcher.ExtClassLoader 的父类
+ *  5.1 是 URLClassLoader 的父类
+ *  5.2 URLClassLoader 是 Launcher.ExtClassLoader 的父类
  *
  * @author bascker
  */

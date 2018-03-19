@@ -12,27 +12,27 @@ import java.util.regex.Pattern;
 
 /**
  * 正则表达式 Sample
- * <p>
+ *
  * 1.正则: 主要包括 3 个类, Pattern, Matcher, PatternSyntaxException
- * <p>
+ *
  * 2.Pattern
- * 2.1 一个正则表达式的编译表示, 使用 {@link Pattern#compile(String)} 创建
- * 2.2 Pattern.compile(regex): 生成一个 pattern 对象
- * 2.3 Pattern.matches(regex, input): 编译 regex, 并判断 input 是否符合 regex 的格式。等价于 matcher.matches()
- * 2.4 matcher(input): 返回一个 matcher 对象
- * <p>
+ *  2.1 一个正则表达式的编译表示, 使用 {@link Pattern#compile(String)} 创建
+ *  2.2 Pattern.compile(regex): 生成一个 pattern 对象
+ *  2.3 Pattern.matches(regex, input): 编译 regex, 并判断 input 是否符合 regex 的格式。等价于 matcher.matches()
+ *  2.4 matcher(input): 返回一个 matcher 对象
+ *
  * 3.Matcher
- * 3.1 对输入字符串进行解释和匹配操作的引擎, 使用 {@link Pattern#matcher(CharSequence)} 创建
- * 3.2 matches(): 将整个输入串与正则表达式匹配
- * 3.3 find(): 在输入串中查找与该模式匹配的下一子序列
- * 3.4 group(): 获取分组值
- * <p>
+ *  3.1 对输入字符串进行解释和匹配操作的引擎, 使用 {@link Pattern#matcher(CharSequence)} 创建
+ *  3.2 matches(): 将整个输入串与正则表达式匹配
+ *  3.3 find(): 在输入串中查找与该模式匹配的下一子序列
+ *  3.4 group(): 获取分组值
+ *
  * 4.命名分组(捕获)
- * 4.1 即对分组命名，通过名称来捕获所需结果
- * 4.2 jdk7+ 支持命名分组
- * 4.3 语法: (?<NAME>REGEX)
- * 1) 以元组 () 包裹，以 NAME 表示分组的名字，REGEX 表示该分组的正则式
- * 2) 命名不能重复，不能以数字开头
+ *  4.1 即对分组命名，通过名称来捕获所需结果
+ *  4.2 jdk7+ 支持命名分组
+ *  4.3 语法: (?<NAME>REGEX)
+ *      1) 以元组 () 包裹，以 NAME 表示分组的名字，REGEX 表示该分组的正则式
+ *      2) 命名不能重复，不能以数字开头
  *
  * @author bascker
  */

@@ -12,9 +12,9 @@ import java.util.*;
  * Set 集合
  * 1.Set 原理: 基于 Map 实现, 如 Map 是 key 不能重复，Set 则是元素不能重复，因此 Set 就是利用 Map 中“键”不能重复的特性来实现的
  * 2.Set 子类
- * 2.1 HashSet 和 TreeSet：不按照元素添加循序存放
- * 2.2 LinkedHashSet：保持元素的添加顺序
- * 2.3 TreeSet：对 Set 中的元素进行排序存放
+ *  2.1 HashSet 和 TreeSet：不按照元素添加循序存放
+ *  2.2 LinkedHashSet：保持元素的添加顺序
+ *  2.3 TreeSet：对 Set 中的元素进行排序存放
  * 3.一般说来，先把元素添加到 HashSet，再把集合转换为 TreeSet 来进行有序遍历会更快-->这点和HashMap的使用非常的类似
  *
  * @author bascker
