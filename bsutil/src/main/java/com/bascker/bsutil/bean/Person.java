@@ -8,11 +8,15 @@ import java.util.Objects;
  * @author bascker
  */
 public class Person {
+
     private String mName;
     private int mAge;
     private Sex mSex;
 
-    public Person() {
+    public Person() {}
+
+    public Person(final String name) {
+        mName = name;
     }
 
     public Person(final String name, final int age, final Sex sex) {

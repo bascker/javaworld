@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>javaworld</artifactId>
+        <groupId>com.bascker.javaworld</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.bascker.advance</groupId>
+    <artifactId>advance</artifactId>
+
+    <properties>
+        <j3d.version>1.3.1</j3d.version>
+        <j3d.core.version>${j3d.version}</j3d.core.version>
+        <j3d.core.utils.version>${j3d.version}</j3d.core.utils.version>
+        <vecmath.version>1.5.2</vecmath.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>java3d</groupId>
+            <artifactId>j3d-core</artifactId>
+            <version>${j3d.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>java3d</groupId>
+            <artifactId>j3d-core-utils</artifactId>
+            <version>${j3d.core.utils.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.vecmath</groupId>
+            <artifactId>vecmath</artifactId>
+            <version>${vecmath.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

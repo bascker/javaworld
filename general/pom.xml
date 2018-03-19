@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.bascker.util</groupId>
-    <artifactId>bs-util</artifactId>
+    <groupId>com.bascker.general</groupId>
+    <artifactId>general</artifactId>
 
 </project>

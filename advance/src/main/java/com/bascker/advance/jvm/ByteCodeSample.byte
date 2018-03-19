@@ -1,0 +1,315 @@
+Classfile /F:/workspace/github/java/javaworld/advance/src/main/java/com/bascker/advance/jvm/ByteCodeSample.class
+  Last modified 2018-3-19; size 1781 bytes
+  MD5 checksum 74af108ee0bb930d0a8f8b5822ea03b1
+  Compiled from "ByteCodeSample.java"
+public class com.bascker.advance.jvm.ByteCodeSample
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+# Java 中的字节码操作需要对应的数据，但通常这些数据都太大了，存储在字节码里不适合，它们会被存储在常量池里面，而字节码包含一个常量池里的引用 。当类文件生成的时候，其中的一块就是常量池
+# JVM 会为每个类型维护一个常量池，带有 final 标记的常量字段在 class 文件里会被标记成 ACC_FINAL，带有 static 修饰符的静态变量则会被标记成 ACC_STATIC
+Constant pool:
+    #1 = Methodref          #31.#62       // java/lang/Object."<init>":()V
+    #2 = Fieldref           #10.#63       // com/bascker/advance/jvm/ByteCodeSample.b:Z
+    #3 = Fieldref           #10.#64       // com/bascker/advance/jvm/ByteCodeSample.c:I
+    #4 = Class              #65           // java/util/concurrent/atomic/AtomicLong
+    #5 = Long               6l
+    #7 = Methodref          #4.#66        // java/util/concurrent/atomic/AtomicLong."<init>":(J)V
+    #8 = Fieldref           #10.#67       // com/bascker/advance/jvm/ByteCodeSample.mAtomicLong:Ljava/util/concurrent/atomic/AtomicLong;
+    #9 = Fieldref           #68.#69       // java/lang/System.out:Ljava/io/PrintStream;
+   #10 = Class              #70           // com/bascker/advance/jvm/ByteCodeSample
+   #11 = String             #71           // ByteCodeSample
+   #12 = Methodref          #72.#73       // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #13 = Methodref          #10.#74       // com/bascker/advance/jvm/ByteCodeSample.getAtomicLong:()J
+   #14 = Methodref          #72.#75       // java/io/PrintStream.println:(J)V
+   #15 = Methodref          #4.#76        // java/util/concurrent/atomic/AtomicLong.getAndIncrement:()J
+   #16 = Class              #77           // java/lang/StringBuilder
+   #17 = Methodref          #16.#62       // java/lang/StringBuilder."<init>":()V
+   #18 = String             #78           // a ++, a =
+   #19 = Methodref          #16.#79       // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #20 = Fieldref           #10.#80       // com/bascker/advance/jvm/ByteCodeSample.a:I
+   #21 = Methodref          #16.#81       // java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+   #22 = Methodref          #16.#82       // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #23 = String             #83           // ++ a, a =
+   #24 = Methodref          #10.#84       // com/bascker/advance/jvm/ByteCodeSample.showName:()V
+   #25 = Methodref          #10.#62       // com/bascker/advance/jvm/ByteCodeSample."<init>":()V
+   #26 = Methodref          #10.#85       // com/bascker/advance/jvm/ByteCodeSample.showAtomicLong:()V
+   #27 = Methodref          #31.#86       // java/lang/Object.getClass:()Ljava/lang/Class;
+   #28 = String             #87           // b =
+   #29 = Methodref          #16.#88       // java/lang/StringBuilder.append:(Z)Ljava/lang/StringBuilder;
+   #30 = String             #89           // , c =
+   #31 = Class              #90           // java/lang/Object
+   #32 = Utf8               NAME
+   #33 = Utf8               Ljava/lang/String;
+   #34 = Utf8               ConstantValue
+   #35 = Utf8               a
+   #36 = Utf8               I
+   #37 = Utf8               b
+   #38 = Utf8               Z
+   #39 = Integer            1
+   #40 = Utf8               c
+   #41 = Utf8               mAtomicLong
+   #42 = Utf8               Ljava/util/concurrent/atomic/AtomicLong;
+   #43 = Utf8               <init>
+   #44 = Utf8               ()V
+   #45 = Utf8               Code
+   #46 = Utf8               LineNumberTable
+   #47 = Utf8               LocalVariableTable
+   #48 = Utf8               this
+   #49 = Utf8               Lcom/bascker/advance/jvm/ByteCodeSample;
+   #50 = Utf8               showName
+   #51 = Utf8               showAtomicLong
+   #52 = Utf8               getAtomicLong
+   #53 = Utf8               ()J
+   #54 = Utf8               main
+   #55 = Utf8               ([Ljava/lang/String;)V
+   #56 = Utf8               args
+   #57 = Utf8               [Ljava/lang/String;
+   #58 = Utf8               sample
+   #59 = Utf8               <clinit>
+   #60 = Utf8               SourceFile
+   #61 = Utf8               ByteCodeSample.java
+   #62 = NameAndType        #43:#44       // "<init>":()V
+   #63 = NameAndType        #37:#38       // b:Z
+   #64 = NameAndType        #40:#36       // c:I
+   #65 = Utf8               java/util/concurrent/atomic/AtomicLong
+   #66 = NameAndType        #43:#91       // "<init>":(J)V
+   #67 = NameAndType        #41:#42       // mAtomicLong:Ljava/util/concurrent/atomic/AtomicLong;
+   #68 = Class              #92           // java/lang/System
+   #69 = NameAndType        #93:#94       // out:Ljava/io/PrintStream;
+   #70 = Utf8               com/bascker/advance/jvm/ByteCodeSample
+   #71 = Utf8               ByteCodeSample
+   #72 = Class              #95           // java/io/PrintStream
+   #73 = NameAndType        #96:#97       // println:(Ljava/lang/String;)V
+   #74 = NameAndType        #52:#53       // getAtomicLong:()J
+   #75 = NameAndType        #96:#91       // println:(J)V
+   #76 = NameAndType        #98:#53       // getAndIncrement:()J
+   #77 = Utf8               java/lang/StringBuilder
+   #78 = Utf8               a ++, a =
+   #79 = NameAndType        #99:#100      // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #80 = NameAndType        #35:#36       // a:I
+   #81 = NameAndType        #99:#101      // append:(I)Ljava/lang/StringBuilder;
+   #82 = NameAndType        #102:#103     // toString:()Ljava/lang/String;
+   #83 = Utf8               ++ a, a =
+   #84 = NameAndType        #50:#44       // showName:()V
+   #85 = NameAndType        #51:#44       // showAtomicLong:()V
+   #86 = NameAndType        #104:#105     // getClass:()Ljava/lang/Class;
+   #87 = Utf8               b =
+   #88 = NameAndType        #99:#106      // append:(Z)Ljava/lang/StringBuilder;
+   #89 = Utf8               , c =
+   #90 = Utf8               java/lang/Object
+   #91 = Utf8               (J)V
+   #92 = Utf8               java/lang/System
+   #93 = Utf8               out
+   #94 = Utf8               Ljava/io/PrintStream;
+   #95 = Utf8               java/io/PrintStream
+   #96 = Utf8               println
+   #97 = Utf8               (Ljava/lang/String;)V
+   #98 = Utf8               getAndIncrement
+   #99 = Utf8               append
+  #100 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #101 = Utf8               (I)Ljava/lang/StringBuilder;
+  #102 = Utf8               toString
+  #103 = Utf8               ()Ljava/lang/String;
+  #104 = Utf8               getClass
+  #105 = Utf8               ()Ljava/lang/Class;
+  #106 = Utf8               (Z)Ljava/lang/StringBuilder;
+{
+  private static final java.lang.String NAME;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PRIVATE, ACC_STATIC, ACC_FINAL
+    ConstantValue: String ByteCodeSample
+
+  private static int a;
+    descriptor: I
+    flags: ACC_PRIVATE, ACC_STATIC
+
+  private final boolean b;
+    descriptor: Z
+    flags: ACC_PRIVATE, ACC_FINAL
+    ConstantValue: int 1
+
+  private int c;
+    descriptor: I
+    flags: ACC_PRIVATE
+
+  private java.util.concurrent.atomic.AtomicLong mAtomicLong;
+    descriptor: Ljava/util/concurrent/atomic/AtomicLong;
+    flags: ACC_PRIVATE
+
+  public com.bascker.advance.jvm.ByteCodeSample();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=5, locals=1, args_size=1
+         0: aload_0                           # 从局部变量数组中加载一个对象引用到操作数栈的栈顶, 0 号位置上的正是 this 引用
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V   # <init> 方法会初始化实例的各字段, invokespecial 用于调用超类构造方法/实例初始化/私有方法，此处调用的方法是 #1，对应常量池的 Object 构造方法
+         4: aload_0
+         5: iconst_1                          # int 型常量 1 入栈
+         6: putfield      #2                  // Field b:Z  # 为指定的类的实例域赋值
+         9: aload_0
+        10: iconst_5
+        11: putfield      #3                  // Field c:I
+        14: aload_0
+        15: new           #4                  // class java/util/concurrent/atomic/AtomicLong
+        18: dup                               # 复制栈顶数值并将复制值压入栈顶 ==> 这时存在着两个相同的引用
+        19: ldc2_w        #5                  // long 6l    # 将 long 或 double 型常量值从常量池中推送至栈顶
+        22: invokespecial #7                  // Method java/util/concurrent/atomic/AtomicLong."<init>":(J)V
+        25: putfield      #8                  // Field mAtomicLong:Ljava/util/concurrent/atomic/AtomicLong;
+        28: return
+      LineNumberTable:
+        line 11: 0
+        line 15: 4
+        line 16: 9
+        line 17: 14
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      29     0  this   Lcom/bascker/advance/jvm/ByteCodeSample;
+
+  public static void showName();
+    descriptor: ()V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=0, args_size=0
+         0: getstatic     #9                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #11                 // String ByteCodeSample
+         5: invokevirtual #12                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 20: 0
+        line 21: 8
+
+  public final void showAtomicLong();
+    descriptor: ()V
+    flags: ACC_PUBLIC, ACC_FINAL
+    Code:
+      # 操作数栈 3 个 slot, slot0 是 this, slot1 是 System.out，slot2 是 mAtomicLong
+      stack=3, locals=1, args_size=1
+         0: getstatic     #9                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: aload_0
+         4: invokevirtual #13                 // Method getAtomicLong:()J
+         7: invokevirtual #14                 // Method java/io/PrintStream.println:(J)V
+        10: return
+      LineNumberTable:
+        line 24: 0
+        line 25: 10
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      11     0  this   Lcom/bascker/advance/jvm/ByteCodeSample;
+
+  public long getAtomicLong();
+    descriptor: ()J
+    flags: ACC_PUBLIC
+    Code:
+      # operand stack 有 2 个 slot, slot0 存放 this 引用，slot1 存放 mAtomicLong 值
+      # 局部变量表中有一个变量，就是 this, args_size = 1，参数就是 this
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #8                  // Field mAtomicLong:Ljava/util/concurrent/atomic/AtomicLong;
+         4: invokevirtual #15                 // Method java/util/concurrent/atomic/AtomicLong.getAndIncrement:()J # invokevirtual 是调用实例方法，此处调用的是 mAtomicLong 的 getAndIncrement()
+         7: lreturn                           # 从当前方法返回 long
+      LineNumberTable:
+        line 28: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       8     0  this   Lcom/bascker/advance/jvm/ByteCodeSample;
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=5, locals=2, args_size=1
+         0: getstatic     #9                  // Field java/lang/System.out:Ljava/io/PrintStream;   # 获取指定类的静态域，并将其值压入栈顶
+         3: new           #16                 // class java/lang/StringBuilder                      # 创建一个对象，并将其引用值压入栈顶
+         6: dup                                                                                     # 复制栈顶数值并将复制值压入栈顶
+         7: invokespecial #17                 // Method java/lang/StringBuilder."<init>":()V
+        10: ldc           #18                 // String a ++, a =                                   # 将 int, float 或 String 型常量值从常量池中推送至栈顶
+        12: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        15: getstatic     #20                 // Field a:I
+        18: dup
+        19: iconst_1
+        20: iadd                                                                                    # 将栈顶两int型数值相加并将结果压入栈顶
+        21: putstatic     #20                 // Field a:I                                          # 为指定的类的静态域赋值
+        24: invokevirtual #21                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        27: invokevirtual #22                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        30: invokevirtual #12                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        33: iconst_0
+        34: putstatic     #20                 // Field a:I
+        37: getstatic     #9                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        40: new           #16                 // class java/lang/StringBuilder
+        43: dup
+        44: invokespecial #17                 // Method java/lang/StringBuilder."<init>":()V
+        47: ldc           #23                 // String ++ a, a =
+        49: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        52: getstatic     #20                 // Field a:I
+        55: iconst_1
+        56: iadd
+        57: dup
+        58: putstatic     #20                 // Field a:I
+        61: invokevirtual #21                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        64: invokevirtual #22                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        67: invokevirtual #12                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        70: invokestatic  #24                 // Method showName:()V
+        73: new           #10                 // class com/bascker/advance/jvm/ByteCodeSample
+        76: dup
+        77: invokespecial #25                 // Method "<init>":()V
+        80: astore_1
+        81: aload_1
+        82: invokevirtual #26                 // Method showAtomicLong:()V
+        85: aload_1
+        86: invokevirtual #27                 // Method java/lang/Object.getClass:()Ljava/lang/Class;
+        89: pop
+        90: getstatic     #9                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        93: new           #16                 // class java/lang/StringBuilder
+        96: dup
+        97: invokespecial #17                 // Method java/lang/StringBuilder."<init>":()V
+       100: ldc           #28                 // String b =
+       102: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       105: aload_1
+       106: invokevirtual #27                 // Method java/lang/Object.getClass:()Ljava/lang/Class;
+       109: pop
+       110: iconst_1
+       111: invokevirtual #29                 // Method java/lang/StringBuilder.append:(Z)Ljava/lang/StringBuilder;
+       114: ldc           #30                 // String , c =
+       116: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       119: aload_1
+       120: getfield      #3                  // Field c:I
+       123: invokevirtual #21                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+       126: invokevirtual #22                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       129: invokevirtual #12                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       132: return
+      # 行号表, 对于源码文件 ByteCodeSample.java 中的行号
+      LineNumberTable:
+        line 32: 0
+        line 33: 33
+        line 34: 37
+        line 36: 70
+        line 37: 73
+        line 38: 81
+        line 40: 85
+        line 41: 90
+        line 43: 132
+      # 局部变量表：2个局部变量 args 和 sample, 需要在 javac 时加上 -g 才会生成
+      # args: 占据 0 号 slot, 类型是 String[], Start 和 Length 代表 args 的作用域，此处是 [0, 133), 对应 main() 函数，args 的作用域是整个函数全程有效
+      # sample: 占据 1 号 slot, 对应 main() 中作用域为 [81, 81 + 52) ==> [81, 133)
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0     133     0  args   [Ljava/lang/String;
+           81      52     1 sample   Lcom/bascker/advance/jvm/ByteCodeSample;
+
+  # 静态代码: 符合 descriptor 和 flags 后，才会进入 Code 属性表执行指令
+  static {};
+    descriptor: ()V
+    flags: ACC_STATIC                         # 访问标志
+    Code:
+      # stack: 栈长(slot, 1slot = 4byte), stack = 1 表明该栈只有一个 slot
+      # locals: 局部变量表的 slot 个数，此时为 0
+      # args_size: 入参个数，单位不是 slot
+      stack=1, locals=0, args_size=0          # stack = 1 指明
+         0: iconst_0                          # int 型常量值 0 入栈 Operand Stack, 指令前的 0: 中的 0 代表行号/第几个字节，每个方法从 0 开始顺序递增
+         1: putstatic     #20                 // Field a:I  # 符号引用 #20 = Fieldref，指向的是 ByteCodeSample.a，指令 putstatic 会为静态域 a 赋值：0 出栈，赋值给 a
+         4: return                            # static 代码块结束
+      LineNumberTable:
+        line 14: 0
+}
+SourceFile: "ByteCodeSample.java"
