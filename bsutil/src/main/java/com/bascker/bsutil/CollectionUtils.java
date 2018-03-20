@@ -36,6 +36,10 @@ public class CollectionUtils {
     }
 
     public static String toString(final Collection collection) {
+        if (!isValid(collection)) {
+            return "";
+        }
+
         final StringBuffer sb = new StringBuffer();
         final Consumer action = o -> sb.append(o.toString() + " ");
         collection.forEach(action);
