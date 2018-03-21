@@ -1,0 +1,36 @@
+<!-- Ehcache XML Configuration -->
+<!-- config 标签对应一个 CacheManager -->
+<config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xmlns='http://www.ehcache.org/v3'
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd">
+
+    <!-- cache 标签定义了一个 Cache 实例 -->
+    <cache alias="numbers">
+        <key-type>java.lang.String</key-type>
+        <value-type>java.lang.Integer</value-type>
+        <resources>
+            <!-- Entry 的数量 -->
+            <heap unit="entries">2000</heap>
+            <!-- 数据的容量 -->
+            <offheap unit="MB">500</offheap>
+        </resources>
+    </cache>
+
+    <cache-template name="defaults">
+        <key-type>java.lang.Long</key-type>
+        <value-type>java.lang.String</value-type>
+        <heap unit="entries">200</heap>
+    </cache-template>
+
+    <cache alias="names" uses-template="defaults">
+        <key-type>java.lang.String</key-type>
+    </cache>
+
+    <!--
+        service 标签：
+         1. 定义被 CacheManager 管理的 service
+         2. Service.start 会在 CacheManager.init 时调用
+         3. Service.stop 会在 CacheManager.close 时调用
+     -->
+
+</config>

@@ -11,6 +11,7 @@
         <module>general</module>
         <module>advance</module>
         <module>implement</module>
+        <module>library</module>
     </modules>
     <name>The road of learning Java</name>
     <url>http://maven.apache.org</url>
