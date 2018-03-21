@@ -1,5 +1,6 @@
 package com.bascker.general.concurrent;
 
+import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,7 +31,7 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * @author bascker
  */
-public class ConditionSample {
+public class ConditionSample implements Sample {
 
     private static final Logger LOG = LoggerFactory.getLogger(ConditionSample.class);
     private final Lock mLock = new ReentrantLock();
@@ -47,6 +48,7 @@ public class ConditionSample {
         sample.start();
     }
 
+    @Override
     public void start () {
         initThread();
         output();

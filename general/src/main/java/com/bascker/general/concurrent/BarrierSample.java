@@ -1,5 +1,6 @@
 package com.bascker.general.concurrent;
 
+import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +14,7 @@ import java.util.stream.IntStream;
  *
  * @author bascker
  */
-public class BarrierSample {
+public class BarrierSample implements Sample {
 
     private static final Logger LOG = LoggerFactory.getLogger(BarrierSample.class);
     private final CyclicBarrier mArriveBarrier;
@@ -59,13 +60,14 @@ public class BarrierSample {
     /**
      * 出发
      */
-    public void go () {
+    @Override
+    public void start () {
         IntStream.range(0, mNames.length).forEach(i -> new Thread(new Aboard(mNames[i])).start());
     }
 
     public static void main(String[] args) {
         final BarrierSample sample = new BarrierSample(new String[]{"bascker", "jerry", "john", "paul", "lisa", "jessica"});
-        sample.go();
+        sample.start();
     }
 
 }

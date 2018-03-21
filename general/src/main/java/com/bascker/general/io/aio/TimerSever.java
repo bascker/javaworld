@@ -1,6 +1,7 @@
 package com.bascker.general.io.aio;
 
 import com.bascker.bsutil.CharsetUtils;
+import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,7 +24,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author bascker
  */
-public class TimerSever {
+public class TimerSever implements Sample {
 
     private static final Logger LOG = LoggerFactory.getLogger(TimerSever.class);
     private String mHostname;
@@ -34,6 +35,7 @@ public class TimerSever {
         mPort = port;
     }
 
+    @Override
     public void start () {
         try {
             final AsynchronousChannelGroup group = AsynchronousChannelGroup.withThreadPool(Executors.newFixedThreadPool(5));

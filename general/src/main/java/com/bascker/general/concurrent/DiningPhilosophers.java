@@ -1,5 +1,6 @@
 package com.bascker.general.concurrent;
 
+import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +18,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author bascker
  */
-public class DiningPhilosophers {
+public class DiningPhilosophers implements Sample {
 
     private static final Logger LOG = LoggerFactory.getLogger(DiningPhilosophers.class);
 
@@ -28,6 +29,7 @@ public class DiningPhilosophers {
         sample.start();
     }
 
+    @Override
     public void start () {
         final Fork fork = new Fork();
         // 所有哲学家线程，都是操作 fork 对象的锁

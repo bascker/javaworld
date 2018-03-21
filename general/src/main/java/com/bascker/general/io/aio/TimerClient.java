@@ -1,5 +1,6 @@
 package com.bascker.general.io.aio;
 
+import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +17,7 @@ import java.util.concurrent.Future;
  *
  * @author bascker
  */
-public class TimerClient {
+public class TimerClient implements Sample {
 
     private static final Logger LOG = LoggerFactory.getLogger(TimerClient.class);
     private String mHostname;
@@ -27,6 +28,7 @@ public class TimerClient {
         mPort = port;
     }
 
+    @Override
     public void start () {
         try {
             final AsynchronousSocketChannel client = AsynchronousSocketChannel.open();
