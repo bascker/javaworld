@@ -48,4 +48,15 @@ public class CollectionUtils {
         return sb.toString();
     }
 
+    // TODO
+    public static <T> T[] toArray (final Collection<T> collection) {
+        if (isValid(collection)) {
+            return null;
+        }
+
+
+
+        return null;
+    }
+
 }

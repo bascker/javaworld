@@ -1,5 +1,7 @@
 package com.bascker.bsutil.bean;
 
+import java.net.URL;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -12,6 +14,10 @@ public class Person {
     private String mName;
     private int mAge;
     private Sex mSex;
+    private List<String> mHabits;
+    private int[] mLuckyNums;
+    private Address mAddress;
+    private URL mGithub;
 
     public Person() {}
 
@@ -51,6 +57,38 @@ public class Person {
 
     public void setSex(final Sex sex) {
         mSex = sex;
+    }
+
+    public List<String> getHabits() {
+        return mHabits;
+    }
+
+    public void setHabits(final List<String> habits) {
+        mHabits = habits;
+    }
+
+    public int[] getLuckyNums() {
+        return mLuckyNums;
+    }
+
+    public void setLuckyNums(final int[] luckyNums) {
+        mLuckyNums = luckyNums;
+    }
+
+    public Address getAddress() {
+        return mAddress;
+    }
+
+    public void setAddress(final Address address) {
+        mAddress = address;
+    }
+
+    public URL getGithub() {
+        return mGithub;
+    }
+
+    public void setGithub(final URL github) {
+        mGithub = github;
     }
 
     @Override
