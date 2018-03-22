@@ -30,7 +30,7 @@ public class DiningPhilosophers implements Sample {
     }
 
     @Override
-    public void start () {
+    public void start (final Object... args) {
         final Fork fork = new Fork();
         // 所有哲学家线程，都是操作 fork 对象的锁
         new Philosopher("0", fork).start();

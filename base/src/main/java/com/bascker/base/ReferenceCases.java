@@ -11,6 +11,7 @@ import java.lang.ref.WeakReference;
 
 /**
  * Java 引用类型
+ *
  * 1.强引用: StrongReference
  *  1.1 给变量置空后，才会回收该类变量的内存
  *
@@ -36,9 +37,9 @@ import java.lang.ref.WeakReference;
  *
  * @author bascker
  */
-public class Reference {
+public class ReferenceCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Reference.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ReferenceCases.class);
 
     @Test
     public void StrongRef() {

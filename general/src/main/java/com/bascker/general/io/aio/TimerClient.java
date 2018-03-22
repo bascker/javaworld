@@ -29,7 +29,7 @@ public class TimerClient implements Sample {
     }
 
     @Override
-    public void start () {
+    public void start (final Object... args) {
         try {
             final AsynchronousSocketChannel client = AsynchronousSocketChannel.open();
             // Connect Timer Server

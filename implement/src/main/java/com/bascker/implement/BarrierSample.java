@@ -31,7 +31,7 @@ public class BarrierSample implements Sample {
     }
 
     @Override
-    public void start() {
+    public void start(final Object... args) {
         IntStream.range(0, mNames.length).forEach(i -> new Thread(new Aboard(mNames[i])).start());
     }
 

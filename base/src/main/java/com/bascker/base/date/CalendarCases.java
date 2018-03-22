@@ -10,16 +10,16 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Calendar Sample
+ * Calendar 使用案例
  *
  * @author bascker
  */
-public class CalendarSample {
+public class CalendarCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CalendarSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CalendarCases.class);
 
     @Test
-    public void sample() throws ParseException {
+    public void base () throws ParseException {
         final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         final Calendar calendar = Calendar.getInstance();
         LOG.info(format.format(calendar.getTime()).toString());

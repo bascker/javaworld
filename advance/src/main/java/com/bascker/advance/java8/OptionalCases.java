@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Optional;
 
 /**
- * Optional Sample
+ * Optional Case
  *
  * 1.Optional
  *  1.1 相当于值的容器，可通过 get 方法提取值
@@ -16,9 +16,9 @@ import java.util.Optional;
  *
  * @author bascker
  */
-public class OptionalSample {
+public class OptionalCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(OptionalSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(OptionalCases.class);
 
     @Test
     public void base () {
@@ -33,7 +33,6 @@ public class OptionalSample {
         Assert.assertFalse(opEmpty.isPresent());
         opEmpty = Optional.ofNullable(null);
         Assert.assertFalse(opEmpty.isPresent());
-
     }
 
 }

@@ -11,9 +11,9 @@ import java.util.Arrays;
  *
  * @author bascker
  */
-public class ParallelSample {
+public class ParallelCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ParallelSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ParallelCases.class);
 
     /**
      * 使用并行化数组操作初始化数组

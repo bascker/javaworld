@@ -23,7 +23,8 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 /**
- * FileChannel Sample
+ * FileChannel Case
+ *
  * 1.FileChanel
  *
  * 2.ByteBuffer
@@ -40,9 +41,9 @@ import java.util.stream.IntStream;
  *
  * @author bascker
  */
-public class ChannelSample {
+public class ChannelCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ChannelSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ChannelCases.class);
     private static final int MB = 1024;
     private Path data;
     private Path tmp;

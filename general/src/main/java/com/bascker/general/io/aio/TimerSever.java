@@ -36,7 +36,7 @@ public class TimerSever implements Sample {
     }
 
     @Override
-    public void start () {
+    public void start (final Object... args) {
         try {
             final AsynchronousChannelGroup group = AsynchronousChannelGroup.withThreadPool(Executors.newFixedThreadPool(5));
             final InetSocketAddress address = new InetSocketAddress(mHostname, mPort);

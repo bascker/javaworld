@@ -21,6 +21,11 @@ public class BarrierSample implements Sample {
     private final CyclicBarrier mAboardBarrier;
     private final String[] mNames;
 
+    public static void main(String[] args) {
+        final BarrierSample sample = new BarrierSample(new String[]{"bascker", "jerry", "john", "paul", "lisa", "jessica"});
+        sample.start();
+    }
+
     public BarrierSample (final String[] names) {
         mNames = names;
         mArriveBarrier = new CyclicBarrier(mNames.length, () -> LOG.info("所有同事已到达，大家快上车，准备开车了!"));
@@ -61,13 +66,8 @@ public class BarrierSample implements Sample {
      * 出发
      */
     @Override
-    public void start () {
+    public void start (final Object... args) {
         IntStream.range(0, mNames.length).forEach(i -> new Thread(new Aboard(mNames[i])).start());
-    }
-
-    public static void main(String[] args) {
-        final BarrierSample sample = new BarrierSample(new String[]{"bascker", "jerry", "john", "paul", "lisa", "jessica"});
-        sample.start();
     }
 
 }

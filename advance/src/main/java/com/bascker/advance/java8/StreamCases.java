@@ -31,9 +31,9 @@ import java.util.stream.Stream;
  *
  * @author bascker
  */
-public class StreamSample {
+public class StreamCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(StreamSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(StreamCases.class);
 
     /**
      * Stream 的创建

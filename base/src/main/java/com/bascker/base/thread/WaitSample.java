@@ -36,7 +36,7 @@ public class WaitSample implements Sample {
     }
 
     @Override
-    public void start() {
+    public void start(final Object... args) {
         initThread();
         final long start = System.currentTimeMillis();
         mThread.start();

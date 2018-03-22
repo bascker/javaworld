@@ -1,5 +1,6 @@
 package com.bascker.base.thread;
 
+import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,7 +20,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author bascker
  */
-public class SynchronizedSample {
+public class SynchronizedSample implements Sample {
 
     private static final Logger LOG = LoggerFactory.getLogger(SynchronizedSample.class);
     private final Object mLock;
@@ -35,7 +36,8 @@ public class SynchronizedSample {
         sample.start();
     }
 
-    public void start () {
+    @Override
+    public void start (final Object... args) {
         final Thread a = new Thread(() -> synMethod());
         final Thread b = new Thread(() -> synObjectLock());
         final Thread c = new Thread(() -> synClass());

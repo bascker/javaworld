@@ -1,9 +1,9 @@
 package com.bascker.base;
 
+import com.bascker.bsutil.Sample;
 import com.bascker.bsutil.bean.Person;
 import com.bascker.bsutil.bean.Sex;
 import org.junit.Assert;
-import org.junit.Test;
 
 /**
  * equals() & hashCode() sample
@@ -22,13 +22,18 @@ import org.junit.Test;
  *
  * 3.若想偷懒，可以直接使用代码开发工具提供的模板来覆写 equals() & hashCode()
  *
- * @author bascker
  * @see com.bascker.bsutil.bean.Person  重写 equals() & hashCode() 的类
+ * @author bascker
  */
-public class EqualSample {
+public class EqualSample implements Sample {
 
-    @Test
-    public void sample() {
+    public static void main(String[] args) {
+        final EqualSample sample = new EqualSample();
+        sample.start();
+    }
+
+    @Override
+    public void start(final Object... args) {
         final Person bascker = new Person("bascker", 24, Sex.MALE);
         final Person paul = new Person("paul", 22, Sex.MALE);
         final Person lisa = new Person("lisa", 21, Sex.FEMALE);
@@ -38,5 +43,4 @@ public class EqualSample {
         Assert.assertNotEquals(paul, lisa);
         Assert.assertEquals(lisa, lisa2);
     }
-
 }

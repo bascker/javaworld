@@ -13,9 +13,9 @@ import org.slf4j.LoggerFactory;
  *
  * @author bascker
  */
-public class Shift {
+public class ShiftCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Shift.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ShiftCases.class);
 
     @Test
     public void leftShift() {

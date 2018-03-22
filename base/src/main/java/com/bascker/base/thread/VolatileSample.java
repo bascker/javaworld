@@ -1,5 +1,6 @@
 package com.bascker.base.thread;
 
+import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,7 +24,7 @@ import java.util.stream.IntStream;
  *
  * @author bascker
  */
-public class VolatileSample {
+public class VolatileSample implements Sample {
 
     private static final Logger LOG = LoggerFactory.getLogger(VolatileSample.class);
     // 利用 volatile 保障 reader 看到的 mNums 中的值都是最新的
@@ -43,7 +44,9 @@ public class VolatileSample {
         sample.start(2);
     }
 
-    public void start (final int sampleId) {
+    @Override
+    public void start(final Object... args) {
+        final int sampleId = (int) args[0];
         initThread();
 
         if (sampleId != 1) {
@@ -53,6 +56,7 @@ public class VolatileSample {
 
         startSample1();
     }
+
 
     private void startSample1 () {
         mWriter.start();

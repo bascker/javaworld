@@ -18,7 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Files Sample
+ * Files Case
  *
  * 1.Files
  *  1.1 NIO 提供文件操作的工具
@@ -37,9 +37,9 @@ import java.util.List;
  *
  * @author bascker
  */
-public class FilesSample {
+public class FilesCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(FilesSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FilesCases.class);
     private static final String TMP_FILE_PREFIX = "nio_";
     private static final String TMP_FILE_SUFIX = ".txt";
     private Path tmpPath;

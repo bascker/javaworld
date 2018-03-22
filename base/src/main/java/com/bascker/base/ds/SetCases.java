@@ -19,9 +19,9 @@ import java.util.*;
  *
  * @author bascker
  */
-public class SetSample {
+public class SetCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SetSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SetCases.class);
     private static Set<String> set = new HashSet<>();
 
     @Before

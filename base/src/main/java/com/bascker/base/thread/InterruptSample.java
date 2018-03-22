@@ -1,5 +1,6 @@
 package com.bascker.base.thread;
 
+import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,20 +22,21 @@ import org.slf4j.LoggerFactory;
  *
  * @author bascker
  */
-public class InterruptSample {
+public class InterruptSample implements Sample {
 
     private static final Logger LOG = LoggerFactory.getLogger(InterruptSample.class);
     private Thread mThread;
     private volatile int mCount = 0;
 
-    public InterruptSample () {}
+    public InterruptSample() {}
 
     public static void main(String[] args) {
         final InterruptSample sample = new InterruptSample();
         sample.start();
     }
 
-    public void start () {
+    @Override
+    public void start (final Object... args) {
         initThread();
         mThread.start();
         while (true) {

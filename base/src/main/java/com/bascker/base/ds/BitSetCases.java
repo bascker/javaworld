@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * BitSet Sample
+ * BitSet Case
  * 1.用于按位存储(0/1)，下标表示元素值，元素使用 true/false 表示是否存在
  * 2.是存储海量数据的一种方式
  * 3.BitSet 是非线程安全的数据结构，因此多线程场景下，需要使用同步手段来保证线程安全性
@@ -22,15 +22,15 @@ import java.util.Set;
  *
  * @author bascker
  */
-public class BitSetSample {
+public class BitSetCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(BitSetSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BitSetCases.class);
 
     /**
      * 基础使用
      */
     @Test
-    public void base() {
+    public void base () {
         // 默认构造一个 64 位的 BitSet, 每一位初始值都是 false
         BitSet bitSet = new BitSet();
         LOG.info("size: " + bitSet.size());

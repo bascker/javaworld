@@ -1,6 +1,6 @@
 package com.bascker.base;
 
-import org.junit.Test;
+import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,12 +16,17 @@ import org.slf4j.LoggerFactory;
  *
  * @author bascker
  */
-public class OrderOfCreateObj {
+public class OrderOfCreateObjSample implements Sample {
 
-    private static final Logger LOG = LoggerFactory.getLogger(OrderOfCreateObj.class);
+    private static final Logger LOG = LoggerFactory.getLogger(OrderOfCreateObjSample.class);
 
-    @Test
-    public void sample() {
+    public static void main(String[] args) {
+        final OrderOfCreateObjSample sample = new OrderOfCreateObjSample();
+        sample.start();
+    }
+
+    @Override
+    public void start(final Object... args) {
         final Object obj = new Son();
         ((Parent) obj).show();
     }

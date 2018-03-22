@@ -11,13 +11,13 @@ import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 
 /**
- * Lambda 表达式
+ * Lambda 表达式使用案例
  *
  * @author bascker
  */
-public class LambdaSample {
+public class LambdaCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(LambdaSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(LambdaCases.class);
 
     /**
      * lambda 表达式的形式

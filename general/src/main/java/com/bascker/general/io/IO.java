@@ -5,11 +5,11 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
- * IO Sample
+ * IO
  *
  * @author bascker
  */
-public class IOSample {
+public class IO {
 
     /**
      * 直接通过文件输入输出流单字节读写文件

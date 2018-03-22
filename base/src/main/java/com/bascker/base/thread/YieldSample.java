@@ -1,5 +1,6 @@
 package com.bascker.base.thread;
 
+import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,7 +15,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author bascker
  */
-public class YieldSample {
+public class YieldSample implements Sample {
 
     private static final Logger LOG = LoggerFactory.getLogger(YieldSample.class);
     private final Runnable mAction;
@@ -41,7 +42,8 @@ public class YieldSample {
         sample.start();
     }
 
-    public void start () {
+    @Override
+    public void start (final Object... args) {
         initThread();
         mTh1.start();
         mTh2.start();

@@ -49,7 +49,7 @@ public class ConditionSample implements Sample {
     }
 
     @Override
-    public void start () {
+    public void start (final Object... args) {
         initThread();
         output();
     }

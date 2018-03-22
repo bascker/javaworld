@@ -1,6 +1,6 @@
 package com.bascker.base;
 
-import org.junit.Test;
+import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,12 +11,17 @@ import org.slf4j.LoggerFactory;
  *
  * @author bascker
  */
-public class MethodOverload {
+public class MethodOverloadSample implements Sample {
 
-    private static final Logger LOG = LoggerFactory.getLogger(MethodOverload.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MethodOverloadSample.class);
 
-    @Test
-    public void sample() {
+    public static void main(String[] args) {
+        final MethodOverloadSample sample = new MethodOverloadSample();
+        sample.start();
+    }
+
+    @Override
+    public void start(final Object... args) {
         show("bascker");
         show(1);
         // 由于 null 不是对象，所以不会走 show(obj)

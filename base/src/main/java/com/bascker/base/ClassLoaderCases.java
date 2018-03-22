@@ -11,7 +11,8 @@ import java.net.URL;
 import java.net.URLClassLoader;
 
 /**
- * ClassLoader Sample
+ * ClassLoader Case
+ *
  * 1.BootstrapClassLoader
  *  1.1 最顶层的类加载器
  *  1.2 用于加载 %JAVA_HOME%\lib 下的核心类库
@@ -34,9 +35,9 @@ import java.net.URLClassLoader;
  *
  * @author bascker
  */
-public class ClassLoaderSample {
+public class ClassLoaderCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ClassLoaderSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ClassLoaderCases.class);
 
     @Test
     public void bootstrap() {

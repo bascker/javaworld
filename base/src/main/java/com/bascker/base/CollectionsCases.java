@@ -14,11 +14,12 @@ import java.util.List;
 
 /**
  * Collections 的使用：操作集合的工具类
+ *
  * @author backer
  */
-public class CollectionsSample {
+public class CollectionsCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CollectionsSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CollectionsCases.class);
     private static List<Integer> numList = new ArrayList<Integer>();
     private static List<Character> chList = new ArrayList<Character>();
 

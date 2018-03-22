@@ -7,6 +7,10 @@ package com.bascker.bsutil;
  */
 public interface Sample {
 
-    void start();
+    /**
+     * Sample 启动
+     * @param args 启动时的参数
+     */
+   void start(final Object... args);
 
 }

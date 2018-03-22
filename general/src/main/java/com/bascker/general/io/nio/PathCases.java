@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Path Sample
+ * Path Case
  *
  * 1.Path
  *  1.1 NIO.2 中最常用的类, 是 NIO.2 的里程碑
@@ -49,9 +49,9 @@ import java.util.List;
  *
  * @author bascker
  */
-public class PathSample {
+public class PathCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(PathSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PathCases.class);
     private Path data;
     private Path img;
 

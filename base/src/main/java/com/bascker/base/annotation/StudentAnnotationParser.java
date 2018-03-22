@@ -9,6 +9,8 @@ import java.util.Objects;
 
 /**
  * Student 注解解析器
+ *
+ * @author bascker
  */
 public class StudentAnnotationParser {
 

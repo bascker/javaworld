@@ -36,9 +36,9 @@ import java.util.regex.Pattern;
  *
  * @author bascker
  */
-public class RegexSample {
+public class RegexCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(RegexSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RegexCases.class);
 
     /**
      * 基础使用
