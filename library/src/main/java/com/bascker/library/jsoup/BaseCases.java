@@ -36,9 +36,9 @@ import java.io.IOException;
  *
  * @author bascker
  */
-public class BaseSample {
+public class BaseCases {
 
-    private static final Logger LOG = LoggerFactory.getLogger(BaseSample.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BaseCases.class);
     private static final String GITHUB = "https://github.com/bascker/javaworld";
     private static String HTML;
 
