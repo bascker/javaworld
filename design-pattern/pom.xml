@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.bascker.javaworld</groupId>
+    <groupId>com.bascker.designpattern</groupId>
     <artifactId>design-pattern</artifactId>
-
 
 </project>
