@@ -1,4 +1,4 @@
-package com.bascker.general.concurrent;
+package com.bascker.sample;
 
 import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
@@ -22,7 +22,7 @@ public class DiningPhilosophers implements Sample {
 
     private static final Logger LOG = LoggerFactory.getLogger(DiningPhilosophers.class);
 
-    public DiningPhilosophers () {}
+    public DiningPhilosophers() {}
 
     public static void main(String[] args) {
         final DiningPhilosophers sample = new DiningPhilosophers();

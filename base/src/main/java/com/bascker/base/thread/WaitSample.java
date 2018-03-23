@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
  * 2.notify(): 随机选择一个在该对象上调用 wait() 的线程，解除其阻塞状态
  * 3.notifyAll(): 解除所有在该对象上调用 wait() 的线程的阻塞状态，注意唤醒的是在<b>同一个对象</b>上进行等待的所有线程
  *
+ * @see com.bascker.sample.DiningPhilosophers   使用 wait() & notifyAll() 实现的哲学家就餐问题案例
  * @author bascker
  */
 public class WaitSample implements Sample {
