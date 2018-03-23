@@ -14,8 +14,6 @@ import java.util.Set;
  */
 public class FileUtils {
 
-    private FileUtils () {}
-
     public static String getFileType (final Path path) {
         final String filename = path.getFileName().toString();
         final int index = filename.indexOf(".");
@@ -89,4 +87,6 @@ public class FileUtils {
     private static ClassLoader getClassLoader () {
         return FileUtils.class.getClassLoader();
     }
+
+    private FileUtils () {}
 }

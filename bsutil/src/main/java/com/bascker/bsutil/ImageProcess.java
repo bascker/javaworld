@@ -94,4 +94,6 @@ public class ImageProcess {
         return true;
     }
 
+    private ImageProcess () {}
+
 }

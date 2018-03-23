@@ -12,8 +12,6 @@ import java.util.function.Consumer;
  */
 public class CollectionUtils {
 
-    private CollectionUtils() {}
-
     /**
      * Desc sort
      *
@@ -59,4 +57,5 @@ public class CollectionUtils {
         return null;
     }
 
+    private CollectionUtils() {}
 }
