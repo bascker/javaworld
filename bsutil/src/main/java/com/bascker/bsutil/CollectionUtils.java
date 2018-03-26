@@ -46,15 +46,12 @@ public class CollectionUtils {
         return sb.toString();
     }
 
-    // TODO
-    public static <T> T[] toArray (final Collection<T> collection) {
-        if (isValid(collection)) {
+    public static <T> T[] toArray (final Collection<T> collection) throws NoSuchMethodException {
+        if (!isValid(collection)) {
             return null;
         }
 
-
-
-        return null;
+        return (T[]) collection.toArray();
     }
 
     private CollectionUtils() {}
