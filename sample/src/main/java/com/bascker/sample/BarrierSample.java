@@ -1,4 +1,4 @@
-package com.bascker.implement;
+package com.bascker.sample;
 
 import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
@@ -10,6 +10,8 @@ import java.util.stream.IntStream;
 
 /**
  * 使用 wait() 和 notifyAll() 实现栅栏功能: synchronized + wait() + notifyAll() 是典型的生产者-消费者方案的解决方式
+ *
+ * @author bascker
  */
 public class BarrierSample implements Sample {
 
