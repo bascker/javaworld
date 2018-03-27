@@ -49,7 +49,10 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- 模块依赖 -->
+        <!--
+            模块依赖: 不要再一个 Parent pom.xml 中定义 1 个以上的子模块依赖，
+            否则会造成项目循环依赖的问题
+         -->
         <dependency>
             <groupId>com.bascker.util</groupId>
             <artifactId>bs-util</artifactId>

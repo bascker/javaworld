@@ -10,7 +10,16 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 /**
- * 生产者-消费者问题: 阻塞队列的典型案例
+ * 生产者-消费者问题: 阻塞队列 BlockingQueue 的典型案例
+ *
+ * 1.BlockingQueue
+ *  1.1 阻塞队列, juc(即 java.util.concurrent) 下的一个重要接口
+ *  1.2 主要子类
+ *      1) ArrayBlockingQueue: 有界阻塞队列，其内部实现是将对象放到一个数组里
+ *      2) LinkedBlockingQueue: 可设定上界，若不指定，则默认上界为 Integer.MAX_VALUE
+ *      3) DelayQueue: 压入其中的元素必须实现 Delayed 接口
+ *      4) PriorityBlockingQueue: 压入其中的元素必须实现 Comparable 接口
+ *      5) SynchronousQueue: 一个特殊的队列，它的内部同时只能够容纳单个元素
  *
  * @author bascker
  */

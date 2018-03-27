@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * 反射工具类
+ * 反射工具类: 利用 commons-beanutils 更好
  *
  * @author bascker
  */

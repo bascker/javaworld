@@ -1,5 +1,6 @@
 package com.bascker.general.reflect;
 
+import com.bascker.bsutil.ReflectUtils;
 import com.bascker.bsutil.bean.Person;
 import org.junit.Assert;
 import org.junit.Test;
@@ -65,8 +66,7 @@ public class TypeCases {
     @Test
     public void testParameterizedType () throws NoSuchFieldException {
         // 获取 map 属性
-        final Field map = getField("mMap");
-        map.setAccessible(true);
+        final Field map = ReflectUtils.getField(TypeCases.class, "mMap");
 
         // 获取 field 属性的泛型类型
         final Type type = map.getGenericType();
@@ -78,7 +78,7 @@ public class TypeCases {
         LOG.info("声明泛型的类/接口: " + parameterizedType.getRawType().getTypeName());
         LOG.info("Map 泛型的拥有者: " + parameterizedType.getOwnerType());
 
-        final Field entry = getField("mEntry");
+        final Field entry = ReflectUtils.getField(TypeCases.class, "mEntry");
         final ParameterizedType entryParamType = (ParameterizedType) entry.getGenericType();
         LOG.info("Map.Entry 泛型的拥有者: " + entryParamType.getOwnerType().getTypeName());
     }
@@ -87,7 +87,6 @@ public class TypeCases {
     public void testTypeVariable () throws NoSuchFieldException {
         // 获取类型变量
         final Field field = BaseDao.class.getDeclaredField("t");
-        field.setAccessible(true);
         final Type type = field.getGenericType();
         Assert.assertTrue(type instanceof TypeVariableImpl);
 
@@ -112,7 +111,7 @@ public class TypeCases {
 
     @Test
     public void testWildcardType () throws NoSuchFieldException {
-        final Field numbers = getField("mNumbers");
+        final Field numbers = ReflectUtils.getField(TypeCases.class, "mNumbers");
         final ParameterizedType parameterizedType = (ParameterizedType) numbers.getGenericType();
 
         // 剥去泛型变量的 "<>", 获取泛型实际类型
@@ -122,17 +121,11 @@ public class TypeCases {
         LOG.info("<? extends Number> 上界: " + Arrays.toString(wildcardType.getUpperBounds()));
         LOG.info("<? extends Number> 下界: " + Arrays.toString(wildcardType.getLowerBounds()));
 
-        final Field integers = getField("mIntegers");
+        final Field integers = ReflectUtils.getField(TypeCases.class, "mIntegers");
         final ParameterizedType integersPT = (ParameterizedType) integers.getGenericType();
         final WildcardType integersWT = (WildcardType) integersPT.getActualTypeArguments()[0];
         LOG.info("<? super Integer> 上界: " + Arrays.toString(integersWT.getUpperBounds()));
         LOG.info("<? super Integer> 下界: " + Arrays.toString(integersWT.getLowerBounds()));
-    }
-
-    private Field getField (final String fieldName) throws NoSuchFieldException {
-        final Field field = TypeCases.class.getDeclaredField(fieldName);
-        field.setAccessible(true);
-        return field;
     }
 
     static class BaseDao<T> {
