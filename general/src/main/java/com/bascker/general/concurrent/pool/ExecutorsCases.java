@@ -40,12 +40,13 @@ import java.util.stream.IntStream;
  * 5.ScheduledThreadPool
  *  5.1 固定容量的线程池, 可用于处理延时任务或定时任务
  *  5.2 任务执行方式:
- *      1) scheduledAtFixedRate:     定时执行
- *      2) scheduledWithFixedDelay:  延时执行
+ *      1) scheduledAtFixedRate:     定时执行, 每隔 period 时间后运行一次任务
+ *      2) scheduledWithFixedDelay:  延时执行, 上一次任务成功执行后，延迟 delay 时间后再次执行
  *  5.3 采用 DelayQueue 存储等待的任务
  *
  * 6.WorkStealingPool
  *  6.1 拥有多个任务队列（以便减少连接数）的线程池
+ *  6.2 底层返回的是 ForkJoinPool 实例
  *
  * @see ExecutorService                             真正的线程池接口
  * @see java.util.concurrent.ThreadPoolExecutor     Executors 创建的线程池都是 ThreadPoolExecutor 实例对象, 是 ExecutorService 的默认实现
@@ -112,18 +113,44 @@ public class ExecutorsCases {
             // 延迟执行: 只执行 1 次
             scheduledThreadPool.schedule(action, 1, TimeUnit.SECONDS);
 
-            // 周期性任务: 延迟 1s 后执行, 每 3s 执行一次
+            /*
+             * 周期性任务:
+             * 1.第一次延迟 1s 后执行, 之后每 3s 执行一次，即 1s + 3s -> 1s + 2 * 3s -> 1s + 3 * 3s
+             * 2.若某一个任务遇到异常，则下一次的任务执行将会被延后，否则只能通过取消或者结束 executor 才能终止任务
+             * 3.若某一个任务的时间消耗 > period，则后面的任务将会等待该任务执行完毕，而不是并发执行
+             * 4.period: 延时的固定频率
+             */
             scheduledThreadPool.scheduleAtFixedRate(action, 1, 3, TimeUnit.SECONDS);
 
-            // 周期性任务: 延迟 1s 后执行, 每 3s 执行一次
+            /*
+             * 周期性任务:
+             * 1.第一次延迟 2s 后执行, 之后每个任务成功执行后, 再延迟 3s 执行下一个任务,
+             *   即 2s + costTime(task1) -> 2s + costTime(task1) + 3s -> 2s + costTime(task1) + 3s + costTime(task2) + 3s
+             * 2.任务执行遇到异常的情况，同 scheduleAtFixedRate()
+             * 3.delay: 上一次任务成功执行后，等待多久开始执行下一次任务
+             */
             scheduledThreadPool.scheduleWithFixedDelay(action, 2, 3, TimeUnit.SECONDS);
 
             Thread.sleep(100 * 1000);
+
         } catch (InterruptedException e) {
             LOG.error(e.getMessage());
         } finally {
             scheduledThreadPool.shutdown();
         }
+    }
+
+    @Test
+    public void testWorkStealingPool () throws InterruptedException {
+        // 设置并行线程数为 2, 即每时每刻只有 2 个线程同时执行, 若不设置，则默认是当前系统的 CPU 个数
+        final ExecutorService workStealingThreadPool = Executors.newWorkStealingPool(2);
+        try {
+            IntStream.range(0, 50).forEach(i -> workStealingThreadPool.execute(action));
+        } finally {
+            workStealingThreadPool.shutdown();
+        }
+
+        Thread.sleep(1 * 100);
     }
 
 }
