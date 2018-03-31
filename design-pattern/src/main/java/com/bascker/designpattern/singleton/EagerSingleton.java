@@ -10,7 +10,8 @@ package com.bascker.designpattern.singleton;
  */
 public class EagerSingleton {
 
-    private static EagerSingleton mInstance = new EagerSingleton();
+    // 利用 final 确保实例引用不会被篡改
+    private static final EagerSingleton mInstance = new EagerSingleton();
 
     public static EagerSingleton getInstance() {
         return mInstance;

@@ -15,7 +15,7 @@ public class LazySingleton {
 
     private static LazySingleton mInstance = null;
 
-    public synchronized LazySingleton getInstance () {
+    public static synchronized LazySingleton getInstance () {
         if (Objects.isNull(mInstance)) {
             mInstance = new LazySingleton();
         }
