@@ -1,5 +1,6 @@
 package com.bascker.designpattern.factory.factorymethod.sample.fruit;
 
+import com.bascker.designpattern.factory.bean.Fruit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,5 +1,8 @@
-package com.bascker.designpattern.factory;
+package com.bascker.designpattern.factory.factorymethod;
 
+import com.bascker.designpattern.factory.bean.Apple;
+import com.bascker.designpattern.factory.bean.Banana;
+import com.bascker.designpattern.factory.bean.Peach;
 import com.bascker.designpattern.factory.factorymethod.sample.fruit.*;
 import org.junit.Assert;
 import org.junit.Test;

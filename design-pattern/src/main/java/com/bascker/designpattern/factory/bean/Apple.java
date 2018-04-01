@@ -1,4 +1,4 @@
-package com.bascker.designpattern.factory.factorymethod.sample.fruit;
+package com.bascker.designpattern.factory.bean;
 
 /**
  * Apple
