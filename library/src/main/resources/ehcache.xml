@@ -19,6 +19,10 @@
     <cache-template name="defaults">
         <key-type>java.lang.Long</key-type>
         <value-type>java.lang.String</value-type>
+        <!-- TTL 设置 -->
+        <expiry>
+            <ttl unit="millis">5</ttl>
+        </expiry>
         <heap unit="entries">200</heap>
     </cache-template>
 
