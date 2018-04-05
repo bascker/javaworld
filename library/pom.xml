@@ -13,6 +13,8 @@
     <artifactId>library</artifactId>
 
     <properties>
+        <cglib.version>3.2.5</cglib.version>
+
         <commons.beanutils.version>1.9.3</commons.beanutils.version>
 
         <ehcache.version>3.4.0</ehcache.version>
@@ -28,6 +30,13 @@
     </properties>
 
     <dependencies>
+        <!-- CGLIB -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
+        </dependency>
+
         <!-- commons -->
         <dependency>
             <groupId>commons-beanutils</groupId>
