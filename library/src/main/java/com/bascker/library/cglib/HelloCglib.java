@@ -20,6 +20,10 @@ public class HelloCglib {
         return "What a beautiful girl";
     }
 
+    public String say (final String msg) {
+        return "HelloCglib, " + msg;
+    }
+
     @Override
     public String toString() {
         return "Hello CGLIB";
