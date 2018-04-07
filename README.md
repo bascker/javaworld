@@ -18,3 +18,23 @@ javaworld 以 maven 来进行管理，各个子模块有自己的分工，具体
 * 所有内部代码走`main()`函数运行的，实现`com.bascker.bsutil.Sample`接口，并且在不影响阅读时，类名尽量以`Sample`结尾
 * `src/main`目录下的代码中使用 `@Test` 注解来对某一知识点进行测试的，类名以`Cases`结尾
 * 其他正常 Java 类的测试, 还是按照 maven 项目结构来，走`src/test`目录，单元测试类名以`Test`结尾
+* Java 文件的创建者，在类上标注可用 `@author` 进行标注, 则该类的方法默认是创建者声明的。若其他人添加了方法, 可对方法使用 `@author` 
+进行注释, 并可在类名上`@author firstAuthor` 后进行声明。
+    ```
+    /**
+    * Main
+    *
+    * @author bascker, paul
+    */
+    public class Main {
+        
+        // 该方法默认为第一作者所声明
+        public void say () {}
+        
+        /**
+        * @author paul
+        */
+        public void hello () {}
+        
+    }
+    ```
