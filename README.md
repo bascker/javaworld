@@ -11,6 +11,8 @@ javaworld 以 maven 来进行管理，各个子模块有自己的分工，具体
 * implement: 利用所学/源码解析自实现的类, 如自实现栅栏
 * library: 三方库的使用
 * sample: 存放经典案例, 如哲学家就餐问题, 生产者-消费者问题
+* wechat: 微信模块
+    * wechat-public：公众号
 
 
 ## 规范
