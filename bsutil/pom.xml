@@ -12,4 +12,17 @@
     <groupId>com.bascker.util</groupId>
     <artifactId>bs-util</artifactId>
 
+    <properties>
+        <httpclient.version>4.5.2</httpclient.version>
+    </properties>
+
+    <dependencies>
+        <!-- httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>
