@@ -11,6 +11,7 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -140,10 +141,40 @@ public class StreamCases {
      */
     @Test
     public void testReduce() {
+        // 操作基本类型
         final int sum = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
                 .reduce(0, (acc, element) -> acc + element);	    // acc 是累加器，保存累加结果。 element 是当前元素
         Assert.assertEquals(45, sum);
+
+        // 操作对象
+        final List<Point> points = Arrays.asList(new Point(1, 2), new Point(2, 3), new Point(3, 4));
+        final Optional<Point> optional = points.stream().reduce((p1, p2) -> new Point(p1.x + p2.x, p1.y + p2.y));
+        final Point total = optional.get();
+        Assert.assertEquals(6, total.x);
+        Assert.assertEquals(9, total.y);
+
+        // 复用: 避免 lambda 每次 new 一个对象
+        final Point point2 = new Point(0, 0);
+        final Optional<Point> optional2 = points.stream().reduce((p1, p2) -> {
+            point2.x = p1.x + p2.x;
+            point2.y = p1.x + p2.y;
+
+            return point2;
+        });
+        Assert.assertEquals(6, point2.x);
+        Assert.assertEquals(9, point2.y);
     }
+
+    static class Point {
+        int x;
+        int y;
+
+        public Point(final int x, final int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
 
     /**
      * 串行统计
