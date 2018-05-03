@@ -11,6 +11,7 @@ import java.util.Objects;
  */
 public class Person {
 
+    private static final Person INSTANCE = new Person();
     private String mName;
     private int mAge;
     private Sex mSex;
@@ -30,6 +31,69 @@ public class Person {
         mAge = age;
         mSex = sex;
     }
+
+    // 静态工厂方法构建对象
+    public static Person getInstance () {
+        return INSTANCE;
+    }
+
+    public static Person newInstance () {
+        return new Person();
+    }
+
+    // Builder 模式构建 Person 对象
+    private Person(final Builder builder) {
+        mName = builder.mName;
+        mAge = builder.mAge;
+        mSex = builder.mSex;
+        mHabits = builder.mHabits;
+        mAddress = builder.mAddress;
+        mGithub = builder.mGithub;
+    }
+
+    static class Builder {
+        // required fields
+        private String mName;
+        private int mAge;
+        private Sex mSex;
+
+        // optional fields
+        private List<String> mHabits;
+        private int[] mLuckyNums;
+        private Address mAddress;
+        private URL mGithub;
+
+        public Builder(final String name, final int age, final Sex sex) {
+            mName = name;
+            mAge = age;
+            mSex = sex;
+        }
+
+        public Builder habits(final List<String> habits) {
+            mHabits = habits;
+            return this;
+        }
+
+        public Builder luckyNums(final int[] luckyNums) {
+            mLuckyNums = luckyNums;
+            return this;
+        }
+
+        public Builder address(final Address address) {
+            mAddress = address;
+            return this;
+        }
+
+        public Builder github(final URL github) {
+            mGithub = github;
+            return this;
+        }
+
+        public Person build() {
+            return new Person(this);
+        }
+    }
+
 
     // ---------------------------------------
     // Getter/Setter
