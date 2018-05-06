@@ -20,6 +20,7 @@ import java.util.stream.IntStream;
  *  1.2 可创建 5 种线程池:
  *      1) FixedThreadPool & CachedThreadPool & SingleThreadExecutor & ScheduledThreadPool
  *      2) WorkStealingPool: JDK 1.8+ 提供
+ *  1.3 线程池好处: 实现线程复用, 节省系统资源
  *
  * 2.FixedThreadPool
  *  2.1 容量固定的线程池, 每当提交一个任务就创建一个线程，直到到达线程池最大数量
@@ -49,7 +50,8 @@ import java.util.stream.IntStream;
  *  6.2 底层返回的是 ForkJoinPool 实例
  *
  * @see ExecutorService                             真正的线程池接口
- * @see java.util.concurrent.ThreadPoolExecutor     Executors 创建的线程池都是 ThreadPoolExecutor 实例对象, 是 ExecutorService 的默认实现
+ * @see java.util.concurrent.ThreadPoolExecutor
+ *
  * @author bascker
  */
 public class ExecutorsCases {
