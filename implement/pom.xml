@@ -12,4 +12,12 @@
     <groupId>com.bascker.implement</groupId>
     <artifactId>implement</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.bascker.util</groupId>
+            <artifactId>bs-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>

@@ -24,6 +24,7 @@
         <junit.version>4.12</junit.version>
         <hamcrest.version>1.3</hamcrest.version>
         <maven.compiler.version>2.3.2</maven.compiler.version>
+        <maven.surefire.version>2.18.1</maven.surefire.version>
 
         <!--commons-->
         <commons.lang3.version>3.4</commons.lang3.version>
@@ -52,16 +53,6 @@
             <artifactId>hamcrest-all</artifactId>
             <version>${hamcrest.version}</version>
             <scope>test</scope>
-        </dependency>
-
-        <!--
-            模块依赖: 不要再一个 Parent pom.xml 中定义 1 个以上的子模块依赖，
-            否则会造成项目循环依赖的问题
-         -->
-        <dependency>
-            <groupId>com.bascker.util</groupId>
-            <artifactId>bs-util</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <!-- commons -->
@@ -128,6 +119,26 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                    <excludes>
+                        <!-- advance.j3d -->
+                        <exclude>**/Conus3dTest.java</exclude>
+                        <exclude>**/Cylinder3dTest.java</exclude>
+                        <exclude>**/LineShapeTest.java</exclude>
+                        <exclude>**/ObjFileLoaderTest.java</exclude>
+                        <exclude>**/Sphere3dTest.java</exclude>
+
+                        <!-- implement -->
+                        <exclude>**/ConditionQueueTest.java</exclude>
+                        <exclude>**/WaitQueueTest.java</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
         </plugins>

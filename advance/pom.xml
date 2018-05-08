@@ -21,6 +21,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.bascker.util</groupId>
+            <artifactId>bs-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>java3d</groupId>
             <artifactId>j3d-core</artifactId>
             <version>${j3d.core.version}</version>

@@ -1,0 +1,28 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>WeChart Public Number</display-name>
+  <!-- 配置 DispatcherServlet -->
+  <servlet>
+    <servlet-name>springmvc</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!--
+      修改配置文件路径，这样就可把配置文件放入 resources 目录，并更名，可以不加 servlet 后缀
+      顺序：需要在 load-on-startup 之前
+     -->
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath*:springmvc.xml</param-value>
+    </init-param>
+    <!-- 可选，若存在，则将在 app 启动时装载 servlet 并调用 init 方法 -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>springmvc</servlet-name>
+    <!-- 拦截所有请求(包括静态资源的请求) -->
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>

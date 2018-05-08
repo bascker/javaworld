@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- 基础配置 -->
+    <!-- 1.注解扫描器  -->
+    <context:component-scan base-package="com.bascker.wechat.publicnumber" />
+    <!-- 2.注册用于支持基于注解的控制器的请求处理方法的 bean 对象 -->
+    <mvc:annotation-driven/>
+    <!-- 3.指明 SpringMVC 中哪些静态资源需要单独处理，不交给 DispatcherServlet。
+           Note: <mvc:resources/> 必须搭配 <mvc:annotation-driven/> 使用，若没有,则 <mvc:resources/> 会阻止任何控制器被调用，
+           导致所有请求 url 报错 404。若不使用 <mvc:resources/> 则不需要 <mvc:annotation-driven/>
+     -->
+    <mvc:resources mapping="/assert/**" location="/assert/" cache-period="31556926"/>
+    <!-- 4.配置视图解析器: 如何把 handler 方法返回值解析为实际的物理视图。实际页面 = prefix + returnVal + suffix -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+</beans>
