@@ -1,4 +1,4 @@
-package com.bascker.wechat.publicnumber;
+package com.bascker.wechat.publicnumber.util;
 
 import com.bascker.bsutil.FileUtils;
 import com.bascker.bsutil.PropertiesUtils;
@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.Properties;
 
 /**
- * WeChat Config
+ * WeChat Config: 负责读取 WeChat 属性配置文件
  *
  * @author bascker
  */

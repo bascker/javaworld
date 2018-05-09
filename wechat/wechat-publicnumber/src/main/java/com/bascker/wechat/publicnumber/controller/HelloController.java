@@ -1,5 +1,6 @@
-package com.bascker.wechat.publicnumber;
+package com.bascker.wechat.publicnumber.controller;
 
+import com.bascker.wechat.publicnumber.util.AppConfig;
 import com.bascker.wechat.util.WechatUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,12 +13,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Hello WeChat Public Number: 微信公众号接入
+ * 微信公众号案例(一): 微信公众号接入, 最基础
  *
  * 1.WeChat 公众号接入步骤
  *  1) 获取 WX 服务器传递过来的请求数据: signature, timestamp, nonce, echostr
  *  2) 校验该 GET 请求确实来自 WX 服务器
  *  3) 返回 echostr 参数内容，接入 WX
+ *
+ * 2.WeChat 配置
  *
  * @author bascker
  */
