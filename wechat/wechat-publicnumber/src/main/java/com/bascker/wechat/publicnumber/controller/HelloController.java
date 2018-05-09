@@ -20,7 +20,12 @@ import java.io.PrintWriter;
  *  2) 校验该 GET 请求确实来自 WX 服务器
  *  3) 返回 echostr 参数内容，接入 WX
  *
- * 2.WeChat 配置
+ * 2.WeChat 接入测试步骤
+ *  1) 进入微信公众号平台(可使用测试号)
+ *  2) 接口信息 -> 修改
+ *  3) 填写 url: 对应 wechat.properties 的 baseUrl。必须携带协议名, 如 http://kvc2af.natappfree.cc/hello
+ *  4) 填写 token: 跟 wechat.properties 中的 token 值一致
+ *  5) 提交: 若保存成功，则接入成功
  *
  * @author bascker
  */
