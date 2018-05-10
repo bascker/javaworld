@@ -51,11 +51,54 @@ public class JssdkController {
     @RequestMapping("/qrcode")
     public String qrcode (final Model model) {
         LOG.info("WeChat QrCode start");
-        final String url = CONF.getBaseUrl() + API_PREFIX + "/qrcode";
+        final String url = generateCallbackUrl("/qrcode");
+        LOG.info("Callback url {}", url);
+
+        model.addAttribute("url", url);
         model.addAllAttributes(before(url));
         LOG.info("WeChat QrCode end");
 
         return PAGE_ROOT_PATH + "/qrcode";
+    }
+
+    /**
+     * 分享接口
+     * @param model
+     * @return
+     */
+    @RequestMapping("/share")
+    public String share (final Model model) {
+        LOG.info("WeChat share start");
+        final String url = generateCallbackUrl("/share");
+        LOG.info("Callback url {}", url);
+
+        model.addAllAttributes(before(url));
+        LOG.info("WeChat share end");
+
+        return PAGE_ROOT_PATH + "/share";
+    }
+
+    /**
+     * 图像接口
+     * @return
+     */
+    @RequestMapping("/image")
+    public String image (final Model model) {
+        LOG.info("WeChat image start");
+        final String url = generateCallbackUrl("/image");
+        model.addAllAttributes(before(url));
+        LOG.info("WeChat image end");
+
+        return PAGE_ROOT_PATH + "/image";
+    }
+
+    /**
+     * 生成接口回调地址
+     * @param api RequestMapping 注解中的 value
+     * @return
+     */
+    private String generateCallbackUrl (final String api) {
+        return CONF.getBaseUrl() + API_PREFIX + api;
     }
 
     /**
