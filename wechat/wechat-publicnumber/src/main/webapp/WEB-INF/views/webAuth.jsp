@@ -4,12 +4,13 @@
 %>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>WeChat 网页授权</title>
     <link href="<%= path %>/assert/lib/wechat/weui/weui.css" rel="stylesheet" />
 </head>
 <body>
-<div class="weui-panel weui-panel__hd">
-    <div class="weui-cells__title"><h1>用户信息</h1></div>
+<div class="weui-panel">
+    <div class="weui-cells__title"><h3>用户信息</h3></div>
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell">
             <div class="weui-cell__hd"><label class="weui-label">ID</label></div>
