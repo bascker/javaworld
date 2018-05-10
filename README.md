@@ -12,8 +12,8 @@ javaworld 以 maven 来进行管理，各个子模块有自己的分工，具体
 * library: 三方库的使用
 * sample: 存放经典案例, 如哲学家就餐问题, 生产者-消费者问题
 * wechat: 微信模块
-    * wechat-public：公众号
-
+    * wechat-publicnumber：公众号
+    * wechat-util: 微信相关工具集
 
 ## 规范
 为便于代码管理与阅读，进行如下约束：
