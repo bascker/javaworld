@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conf>
+    <name>java</name>
+    <version>1.8</version>
+    <libs>
+        <lib>
+            <name>dom4j</name>
+            <version>1.6.1</version>
+        </lib>
+        <lib>
+            <name>lang3</name>
+        </lib>
+    </libs>
+</conf>

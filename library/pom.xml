@@ -17,6 +17,8 @@
 
         <commons.beanutils.version>1.9.3</commons.beanutils.version>
 
+        <dom4j.version>1.6.1</dom4j.version>
+
         <ehcache.version>3.4.0</ehcache.version>
 
         <guava.version>23.6-jre</guava.version>
@@ -48,6 +50,13 @@
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
             <version>${commons.beanutils.version}</version>
+        </dependency>
+
+        <!-- dom4j -->
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>${dom4j.version}</version>
         </dependency>
 
         <!-- ehcache -->
