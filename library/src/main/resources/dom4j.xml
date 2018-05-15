@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <conf>
-    <name>java</name>
-    <version>1.8</version>
+    <jdk.name>java</jdk.name>
+    <jdk.version>1.8</jdk.version>
     <libs>
         <lib>
             <name>dom4j</name>

@@ -10,8 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -50,8 +48,7 @@ public class SAXReaderSample implements Sample {
                 return;
             }
 
-            parseByIterator(root);
-            parseByForeach(root);
+            LOG.info("conf{name: {}, version: {}}", getValue(root, "jdk.name"), getValue(root, "jdk.version"));
         } catch (DocumentException e) {
             LOG.error("read {} failed", CONF_NAME, e);
         } finally {
@@ -60,27 +57,8 @@ public class SAXReaderSample implements Sample {
         LOG.info("SAXReaderSample end");
     }
 
-    private void parseByIterator (final Element root) {
-        LOG.info("parseByIterator start");
-        final Iterator<Element> elementIterator = root.elementIterator();
-        final StringBuilder sb = new StringBuilder();
-        while (elementIterator.hasNext()) {
-            final Element element = elementIterator.next();
-            final String nodeName = element.getName();
-            sb.append("{")
-                .append(nodeName).append(": ").append(element.getStringValue())
-                .append("}");
-            LOG.info(sb.toString());
-            sb.delete(0, sb.length());
-        }
-        LOG.info("parseByIterator end");
-    }
-
-    private void parseByForeach (final Element root) {
-        LOG.info("parseByForeach start");
-        final List<Element> elements = root.elements();
-        elements.forEach(element -> LOG.info("element {}", element));
-        LOG.info("parseByForeach end");
+    private String getValue(final Element root, final String key) {
+        return root.elementText(key).trim();
     }
 
 }
