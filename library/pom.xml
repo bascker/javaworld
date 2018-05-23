@@ -29,6 +29,10 @@
         <jackson.annotations.version>${jackson.version}</jackson.annotations.version>
 
         <jsoup.version>1.10.2</jsoup.version>
+
+        <powermock.version>1.6.5</powermock.version>
+
+        <testng.version>6.11</testng.version>
     </properties>
 
     <dependencies>
@@ -95,6 +99,38 @@
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>${jsoup.version}</version>
+        </dependency>
+
+        <!-- PowerMock -->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-core</artifactId>
+            <version>${powermock.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <version>${powermock.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-testng</artifactId>
+            <version>${powermock.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>${powermock.version}</version>
+        </dependency>
+
+        <!-- TestNG -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
         </dependency>
     </dependencies>
 

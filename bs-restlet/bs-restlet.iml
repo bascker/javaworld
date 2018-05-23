@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+<module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="web" name="Web">
       <configuration>
@@ -28,24 +28,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../m2/repository/org/restlet/jee/org.restlet/org.restlet.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../m2/repository/org/restlet/jee/org.restlet.ext.jackson/org.restlet.ext.jackson.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="module" module-name="bs-util" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.4" level="project" />

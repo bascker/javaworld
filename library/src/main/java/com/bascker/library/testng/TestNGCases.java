@@ -10,14 +10,12 @@ import org.testng.annotations.Test;
 import java.util.Calendar;
 
 /**
- * TestNG 基础使用
+ * TestNG 基础使用: 比 JUnit 更强的测试框架, 能进行单元/功能/端对端/集成测试, etc.
  *
  * 1.@Test 注解
  *  1.1 可标注类/方法
  *      1) 标注类时, 所有 public 方法都会被视为测试方法
  *      2) 标注方法时, 即使是 private 方法，都会当作测试方法
- *  1.2
- *  1.3
  *
  * 2.@Parameters
  *  2.1 可用作较为简单的参数传递: 会在 testng.xml 中查找定义
