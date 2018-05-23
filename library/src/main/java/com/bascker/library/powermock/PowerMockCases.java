@@ -1,5 +1,8 @@
 package com.bascker.library.powermock;
 
+import com.bascker.library.powermock.model.Address;
+import com.bascker.library.powermock.model.User;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.slf4j.Logger;
@@ -34,7 +37,7 @@ public class PowerMockCases {
         LOG.info("[PowerMock] nums: " + nums);
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void beforeMethod() {
         // 初始化 Mockito 的注解
         MockitoAnnotations.initMocks(this);
@@ -52,6 +55,19 @@ public class PowerMockCases {
         Assert.assertTrue(mockingDetails(names).isMock());
     }
 
+    // --------------------------------------
+    // 注入 Mock 对象
+    // --------------------------------------
 
+    @InjectMocks
+    private User user;
+
+    @Mock
+    private Address address;
+
+    public void testInjectMocks() {
+        when(address.getCity()).thenReturn("HangZhou");
+        LOG.info(user.toString());
+    }
 
 }
