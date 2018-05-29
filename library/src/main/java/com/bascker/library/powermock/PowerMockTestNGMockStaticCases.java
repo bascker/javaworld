@@ -40,9 +40,9 @@ import static org.powermock.api.mockito.PowerMockito.when;
 
 @Test
 @PrepareForTest(StringUtils.class)
-public class PowerMockitoTestNGMockStaticCases {
+public class PowerMockTestNGMockStaticCases {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(PowerMockitoTestNGMockStaticCases.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PowerMockTestNGMockStaticCases.class);
 
     @BeforeClass
     public void beforeClass() {

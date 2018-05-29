@@ -20,7 +20,7 @@ import static org.powermock.api.mockito.PowerMockito.when;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(value = StringUtils.class)
-public class PowerMockitoJunitMockStaticCases {
+public class PowerMockJunitMockStaticCases {
 
     @Before
     public void before() {

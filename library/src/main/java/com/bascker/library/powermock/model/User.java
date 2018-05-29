@@ -9,10 +9,22 @@ public class User {
 
     private String name;
 
-//    private Address address;
     private Address address = new Address("JiangSu");
 
     public User() {}
+
+    public User(final String name) {
+        this.name = name;
+    }
+
+    public User getUser(final String name) {
+        return UserFactory.getInstance().getUser(name);
+    }
+
+
+    // --------------------------------------
+    // Getter/Setter
+    // --------------------------------------
 
     public String getName() {
         return name;
