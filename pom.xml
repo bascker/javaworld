@@ -15,10 +15,13 @@
         <module>sample</module>
         <module>designpattern</module>
         <module>wechat</module>
+        <module>spring-mvc</module>
     </modules>
     <name>The road of learning Java</name>
     <url>http://maven.apache.org</url>
     <properties>
+        <javaworld.version>1.0-SNAPSHOT</javaworld.version>
+
         <!--project-->
         <java.version>1.8</java.version>
         <junit.version>4.12</junit.version>
