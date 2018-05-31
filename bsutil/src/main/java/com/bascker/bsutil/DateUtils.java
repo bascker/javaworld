@@ -11,6 +11,7 @@ import java.util.Calendar;
 public class DateUtils {
 
     private static final String DEFAULT_PATTERN = "yyyy/MM/dd HH:mm:ss";
+    private static final Calendar calendar = Calendar.getInstance();
 
     /**
      * 获取当前时间
@@ -19,7 +20,6 @@ public class DateUtils {
      */
     public static String now (final String pattern) {
         final SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
-        final Calendar calendar = Calendar.getInstance();
         return dateFormat.format(calendar.getTime());
     }
 

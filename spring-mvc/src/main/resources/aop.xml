@@ -12,7 +12,7 @@
     <!-- 拦截器 -->
     <aop:config proxy-target-class="true">
         <aop:aspect id="time" ref="timeInterceptor">
-            <aop:pointcut id="all" expression="execution(* com.bascker.springframework.dao.UserDao.*(..))"/>
+            <aop:pointcut id="all" expression="execution(* com.bascker.springframework.*(..))"/>
             <aop:before method="now" pointcut-ref="all"/>
             <aop:after method="now" pointcut-ref="all"/>
         </aop:aspect>
