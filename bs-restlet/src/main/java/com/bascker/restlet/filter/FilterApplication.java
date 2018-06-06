@@ -28,6 +28,10 @@ public class FilterApplication extends Application {
         server.start();
     }
 
+    /**
+     * InboundRoot 用以处理进入的请求
+     * @return
+     */
     @Override
     public Restlet createInboundRoot() {
         final Context context = getContext();
