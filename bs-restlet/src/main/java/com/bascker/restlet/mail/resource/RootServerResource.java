@@ -1,14 +1,12 @@
 package com.bascker.restlet.mail.resource;
 
-import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.ResourceException;
 import org.restlet.resource.ServerResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Root ServerResource：通过重写 get/options 等方法来处理 GET/OPTIONS 等请求.
+ * Root ServerResource: 使用注解来处理 GET/OPTIONS 等请求
  *
  * 1.ServerResource
  *  1.1 特定属性
@@ -18,41 +16,25 @@ import org.slf4j.LoggerFactory;
  *
  *
  * @author bascker
+ * @version 1.0.1
  */
-public class RootServerResource extends ServerResource {
+public class RootServerResource extends ServerResource implements RootResource {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RootServerResource.class);
 
-    public RootServerResource() {
-        // 禁止内容协商
-        this.setNegotiated(false);
+    @Override
+    public String represent() {
+        return "This is RootServerResource";
+    }
+
+    @Override
+    public String describe() {
+        throw new RuntimeException("Not Provided");
     }
 
     @Override
     protected void doCatch(final Throwable throwable) {
         LOGGER.error("Catch an exception", throwable);
-    }
-
-    /**
-     * 处理 GET 方法返回简单的文本表示
-     * @return
-     * @throws ResourceException
-     */
-    @Override
-    protected Representation get() throws ResourceException {
-        LOGGER.info("start get");
-        return new StringRepresentation("This is RootServerResource");
-    }
-
-    /**
-     * 处理 OPTIONS 方法说明一个异常的抛出的影响
-     * @return
-     * @throws ResourceException
-     */
-    @Override
-    protected Representation options() throws ResourceException {
-        LOGGER.info("start options");
-        throw new RuntimeException("Not provided");
     }
 
     @Override
