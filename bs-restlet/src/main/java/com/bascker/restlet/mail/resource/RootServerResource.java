@@ -24,7 +24,7 @@ public class RootServerResource extends ServerResource implements RootResource {
 
     @Override
     public String represent() {
-        return "This is RootServerResource";
+        return  "Welcome to " + this.getApplication().getName() + "!";
     }
 
     @Override

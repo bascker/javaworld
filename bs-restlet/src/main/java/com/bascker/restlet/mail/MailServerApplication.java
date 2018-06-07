@@ -2,6 +2,7 @@ package com.bascker.restlet.mail;
 
 
 import com.bascker.restlet.mail.resource.AccountServerResource;
+import com.bascker.restlet.mail.resource.AccountsServerResource;
 import com.bascker.restlet.mail.resource.RootServerResource;
 import org.restlet.Application;
 import org.restlet.Context;
@@ -43,7 +44,7 @@ public class MailServerApplication extends Application {
         // 定义一个路由: 指定某一请求 URL 指定使用哪个过滤器, API 最后的 "/" 一定要加上, 否则抛出 404 异常
         final Router router = new Router(context);
         router.attach("http://localhost/", RootServerResource.class);
-        router.attach("http://localhost/accounts/", AccountServerResource.class);
+        router.attach("http://localhost/accounts/", AccountsServerResource.class);
         router.attach("http://localhost/accounts/{accountId}", AccountServerResource.class);
 
         return router;

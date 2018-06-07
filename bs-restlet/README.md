@@ -1,6 +1,7 @@
 # README
 ## 一、简介
-Restlet 是个轻量级 RESTful Web API 框架，支持所有的 REST 概念, 同时适用于客户端和服务端 Web 应用。
+Restlet 是个轻量级 RESTful Web API 框架，支持所有的 REST 概念, 同时适用于客户端和服务端 Web 应用。Restlet 应用事实上就是 RESTful
+Web 资源的容器，既是服务器端也是客户端资源，提供了跨异构开发环境重用的主要单元。
 
 特点：
 * 线程安全
@@ -24,7 +25,15 @@ org.restlet             # 根包, 包含最重要的组成, 如体现了 REST �
 |- service              # 一些方便的服务
 |- util                 # 工具类
 ~~~
-    
+
+### 1.2 工程结构
+Restlet 推荐应用的工程结构如下：
+```
+App
+|- common               # 被客户端和服务器端共享的注解的 Java 接口和相关联的类
+|- server               # 应用以及实现了”common”中的接口的服务器资源
+|- client               # 客户端资源
+```
 
 ## 二、REST
 REST 是 Representation State Transfer 的缩写, 其概念包括 Resource, Representation, Connector, Component, etc.
