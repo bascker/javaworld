@@ -1,5 +1,6 @@
-package com.bascker.restlet.mail.resource;
+package com.bascker.restlet.mail.server;
 
+import com.bascker.restlet.mail.common.AccountResource;
 import org.restlet.resource.ResourceException;
 import org.restlet.resource.ServerResource;
 

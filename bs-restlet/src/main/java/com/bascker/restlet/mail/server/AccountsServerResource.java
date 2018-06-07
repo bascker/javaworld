@@ -1,5 +1,6 @@
-package com.bascker.restlet.mail.resource;
+package com.bascker.restlet.mail.server;
 
+import com.bascker.restlet.mail.common.AccountsResource;
 import org.restlet.resource.ServerResource;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.bascker.restlet.mail.resource;
+package com.bascker.restlet.mail.common;
 
 import org.restlet.resource.Delete;
 import org.restlet.resource.Get;

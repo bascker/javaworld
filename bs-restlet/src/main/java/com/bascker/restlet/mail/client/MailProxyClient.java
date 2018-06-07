@@ -1,6 +1,6 @@
-package com.bascker.restlet.mail;
+package com.bascker.restlet.mail.client;
 
-import com.bascker.restlet.mail.resource.RootResource;
+import com.bascker.restlet.mail.common.RootResource;
 import org.restlet.resource.ClientResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.bascker.restlet.mail;
+package com.bascker.restlet.mail.server;
 
 import org.restlet.Context;
 import org.restlet.Request;
