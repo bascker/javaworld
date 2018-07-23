@@ -1,6 +1,6 @@
 package com.bascker.library.guava;
 
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import com.google.common.collect.*;
 import org.junit.Assert;
 import org.junit.Test;
@@ -54,7 +54,7 @@ public class CollectionCases {
     @Test
     public void testLists () {
         final List<String> list = Lists.newArrayList("my", "name", "is", "bascker");
-        LOG.info(CollectionUtils.toString(list));
+        LOG.info(CollectionHelper.toString(list));
     }
 
     @Test
@@ -90,9 +90,9 @@ public class CollectionCases {
 
         LOG.info(multimap.keys().toString());
         LOG.info(multimap.asMap().toString());
-        LOG.info(CollectionUtils.toString(multimap.get("a")));
-        LOG.info(CollectionUtils.toString(multimap.get("b")));
-        LOG.info(CollectionUtils.toString(multimap.get("c")));
+        LOG.info(CollectionHelper.toString(multimap.get("a")));
+        LOG.info(CollectionHelper.toString(multimap.get("b")));
+        LOG.info(CollectionHelper.toString(multimap.get("c")));
     }
 
     @Test

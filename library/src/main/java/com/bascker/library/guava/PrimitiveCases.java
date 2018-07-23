@@ -1,6 +1,6 @@
 package com.bascker.library.guava;
 
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import com.google.common.primitives.Ints;
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,7 +28,7 @@ public class PrimitiveCases {
     @Test
     public void testInts () {
         final List<Integer> list = Ints.asList(1,2,3,4);
-        LOG.info(CollectionUtils.toString(list));
+        LOG.info(CollectionHelper.toString(list));
         LOG.info(String.valueOf(Ints.compare(1, 2)));
         Assert.assertEquals("1 2 3 4", Ints.join(" ", 1, 2, 3, 4));
         Assert.assertEquals(4, Ints.max(1, 2, 3, 4));

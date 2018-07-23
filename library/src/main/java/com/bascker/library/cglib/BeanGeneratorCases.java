@@ -1,6 +1,6 @@
 package com.bascker.library.cglib;
 
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import com.bascker.bsutil.bean.Sex;
 import net.sf.cglib.beans.BeanGenerator;
 import org.junit.Assert;
@@ -48,7 +48,7 @@ public class BeanGeneratorCases {
         LOG.info(person.getClass().toString());
 
         // 虽然添加了, 但使用反射查看 Field 是没有这些值的
-        LOG.info(CollectionUtils.toString(
+        LOG.info(CollectionHelper.toString(
                 Arrays.stream(person.getClass().getFields())
                         .map(Field::getName)
                         .collect(Collectors.toSet())));

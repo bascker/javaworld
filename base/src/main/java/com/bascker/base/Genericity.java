@@ -1,6 +1,6 @@
 package com.bascker.base;
 
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -59,7 +59,7 @@ public class Genericity {
      * @param list
      */
     public void wildcard(final List<?> list) {
-        LOG.info(CollectionUtils.toString(list));
+        LOG.info(CollectionHelper.toString(list));
 //        list.add(0);                               // 不可写, 编译出错
     }
 
@@ -69,7 +69,7 @@ public class Genericity {
      * @param numbers 接收 List<Number/Integer/Long/Short> 等容器引用
      */
     public void up(final List<? extends Number> numbers) {
-        LOG.info(CollectionUtils.toString(numbers));
+        LOG.info(CollectionHelper.toString(numbers));
 //        numbers.add(1);                            // 无法写入有意义的数值
         numbers.add(null);
 
@@ -83,7 +83,7 @@ public class Genericity {
      * @param list 接收 List<String/Object> 容器引用
      */
     public void down(final List<? super String> list) {
-        LOG.info(CollectionUtils.toString(list));
+        LOG.info(CollectionHelper.toString(list));
 //        String s = list.get(0);                    // 编译错误
         final Object obj = list.get(0);              // 可读, 但只能用 Object 接受泛型下界容器的值
         LOG.info("list.get(0): " + obj);

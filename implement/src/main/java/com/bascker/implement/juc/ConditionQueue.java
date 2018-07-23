@@ -1,6 +1,6 @@
 package com.bascker.implement.juc;
 
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -86,6 +86,6 @@ public class ConditionQueue<T> implements BlockQueue<T> {
 
     @Override
     public String toString () {
-        return CollectionUtils.toString(mList);
+        return CollectionHelper.toString(mList);
     }
 }

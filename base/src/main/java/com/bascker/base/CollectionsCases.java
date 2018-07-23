@@ -1,6 +1,6 @@
 package com.bascker.base;
 
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,10 +35,10 @@ public class CollectionsCases {
     @Test
     public void testSort() {
         Collections.sort(numList);
-        Assert.assertEquals("0 111 123 201 222", CollectionUtils.toString(numList));
+        Assert.assertEquals("0 111 123 201 222", CollectionHelper.toString(numList));
 
         Collections.sort(chList);
-        Assert.assertEquals("a b c d e", CollectionUtils.toString(chList));
+        Assert.assertEquals("a b c d e", CollectionHelper.toString(chList));
     }
 
     /**
@@ -47,10 +47,10 @@ public class CollectionsCases {
     @Test
     public void testShuffle() {
         Collections.shuffle(numList);
-        LOG.info(CollectionUtils.toString(numList));
+        LOG.info(CollectionHelper.toString(numList));
 
         Collections.shuffle(chList);
-        LOG.info(CollectionUtils.toString(chList));
+        LOG.info(CollectionHelper.toString(chList));
     }
 
     /**
@@ -59,10 +59,10 @@ public class CollectionsCases {
     @Test
     public void testReverse() {
         Collections.reverse(numList);
-        Assert.assertEquals("123 0 201 222 111", CollectionUtils.toString(numList));
+        Assert.assertEquals("123 0 201 222 111", CollectionHelper.toString(numList));
 
         Collections.reverse(chList);
-        Assert.assertEquals("d e b c a", CollectionUtils.toString(chList));
+        Assert.assertEquals("d e b c a", CollectionHelper.toString(chList));
     }
 
     /**
@@ -71,7 +71,7 @@ public class CollectionsCases {
     @Test
     public void testFill() {
         Collections.fill(numList, 1);
-        Assert.assertEquals("1 1 1 1 1", CollectionUtils.toString(numList));
+        Assert.assertEquals("1 1 1 1 1", CollectionHelper.toString(numList));
 
 
         List<Integer> newList = new ArrayList<Integer>();
@@ -88,11 +88,11 @@ public class CollectionsCases {
     public void testCopy() {
         final List<Integer> dest = new ArrayList<>();
 //		Collections.copy(dest, numList);                        // 报错，因为 dest 中 size = 0 < numList.size()
-//		LOG.info(CollectionUtils.toString(dest));
+//		LOG.info(CollectionHelper.toString(dest));
 
         dest.addAll(Arrays.asList(1, 2, 3, 4, 5, 6));
         Collections.copy(dest, numList);
-        Assert.assertEquals("111 222 201 0 123 6", CollectionUtils.toString(dest));
+        Assert.assertEquals("111 222 201 0 123 6", CollectionHelper.toString(dest));
     }
 
     /**
@@ -119,10 +119,10 @@ public class CollectionsCases {
     @Test
     public void testRotate() {
         Collections.rotate(numList, 1);
-        Assert.assertEquals("123 111 222 201 0", CollectionUtils.toString(numList));
+        Assert.assertEquals("123 111 222 201 0", CollectionHelper.toString(numList));
 
         Collections.rotate(numList, -1);
-        Assert.assertEquals("111 222 201 0 123", CollectionUtils.toString(numList));
+        Assert.assertEquals("111 222 201 0 123", CollectionHelper.toString(numList));
     }
 
     /**
@@ -141,7 +141,7 @@ public class CollectionsCases {
     @Test
     public void testReplaceAll() {
         Collections.replaceAll(numList, 222, 333);
-        Assert.assertEquals("111 333 201 0 123", CollectionUtils.toString(numList));
+        Assert.assertEquals("111 333 201 0 123", CollectionHelper.toString(numList));
     }
 
     /**

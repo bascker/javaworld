@@ -2,6 +2,7 @@ package com.bascker.bsutil;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -10,7 +11,7 @@ import java.util.function.Consumer;
  *
  * @author bascker
  */
-public class CollectionUtils {
+public class CollectionHelper {
 
     /**
      * Desc sort
@@ -54,5 +55,23 @@ public class CollectionUtils {
         return (T[]) collection.toArray();
     }
 
-    private CollectionUtils() {}
+    /**
+     * 判断 Collection 是否为空
+     * @param collection
+     * @return
+     */
+    public static boolean isEmpty(final Collection<?> collection) {
+        return CollectionHelper.isEmpty(collection);
+    }
+
+    /**
+     * 判断 Map 是否为空
+     * @param map
+     * @return
+     */
+    public static boolean isEmpty(final Map<?, ?> map) {
+        return MapUtils.isEmpty(map);
+    }
+
+    private CollectionHelper() {}
 }

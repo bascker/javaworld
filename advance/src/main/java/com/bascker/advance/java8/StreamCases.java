@@ -1,6 +1,6 @@
 package com.bascker.advance.java8;
 
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import com.bascker.bsutil.bean.Person;
 import org.junit.Assert;
 import org.junit.Test;
@@ -97,7 +97,7 @@ public class StreamCases {
 
         final List<Person> persons = Arrays.asList(new Person("bascker"), new Person("paul"), new Person("lisa"));
         final List<String> names = persons.stream().map(Person::getName).collect(Collectors.toList());
-        Assert.assertEquals("bascker paul lisa", CollectionUtils.toString(names));
+        Assert.assertEquals("bascker paul lisa", CollectionHelper.toString(names));
     }
 
     /**

@@ -1,7 +1,7 @@
 package com.bascker.general.io.nio;
 
 import com.bascker.bsutil.CharsetUtils;
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,7 +58,7 @@ public class FilesCases {
     public void after () {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             try {
-                LOG.info("临时文件内容: " + CollectionUtils.toString(Files.readAllLines(tmpPath, CharsetUtils.UTF8)));
+                LOG.info("临时文件内容: " + CollectionHelper.toString(Files.readAllLines(tmpPath, CharsetUtils.UTF8)));
                 Files.deleteIfExists(tmpPath);
                 LOG.info("清除临时文件: " + tmpPath.getFileName().toString());
             } catch (IOException e) {

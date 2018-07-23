@@ -1,6 +1,6 @@
 package com.bascker.base.ds;
 
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -72,22 +72,22 @@ public class SetCases {
         Set<String> datas = new HashSet<>();
         datas.addAll(list);
         // 1. HashSet 可以去重，但是不保证内部元素有序，即内部元素是无序的
-        LOG.info(CollectionUtils.toString(datas));
+        LOG.info(CollectionHelper.toString(datas));
 
         // 2. TreeSet：可以去重，以及按元素的自然顺序存储-->注意:其内排序对于字符和数字的区别
         datas = new TreeSet<>();
         datas.addAll(list);
-        LOG.info(CollectionUtils.toString(datas));
+        LOG.info(CollectionHelper.toString(datas));
 
         final List<Integer> nums = Arrays.asList(1, 3, 5, 4, 2, 10, 8, 36, 24, 12, 7, 0);
         Set<Integer> set = new TreeSet<>();
         set.addAll(nums);
-        LOG.info(CollectionUtils.toString(set));
+        LOG.info(CollectionHelper.toString(set));
 
         // 3. LinkedHashSet：保持元素的添加顺序
         set = new LinkedHashSet<>();
         set.addAll(nums);
-        LOG.info(CollectionUtils.toString(nums));
+        LOG.info(CollectionHelper.toString(nums));
     }
 
 }

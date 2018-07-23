@@ -1,6 +1,6 @@
 package com.bascker.base;
 
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,7 +59,7 @@ public class RegexCases {
         while (matcher.find()) {
             rs.add(Integer.valueOf(matcher.group()));
         }
-        LOG.info("所有符合 \\d{2} 的值: " + CollectionUtils.toString(rs));
+        LOG.info("所有符合 \\d{2} 的值: " + CollectionHelper.toString(rs));
     }
 
     /**

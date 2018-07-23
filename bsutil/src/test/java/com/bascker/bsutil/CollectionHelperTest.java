@@ -9,21 +9,21 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * CollectionUtils Unit Test
+ * CollectionHelper Unit Test
  *
  * @author bascker
  */
-public class CollectionUtilsTest {
+public class CollectionHelperTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CollectionUtilsTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CollectionHelperTest.class);
 
     @Test
     public void testToArray () throws NoSuchMethodException {
         final List<String> namse = Arrays.asList("bascker", "johnnie", "lisa", "an");
-        final String[] names = CollectionUtils.toArray(namse);
+        final String[] names = CollectionHelper.toArray(namse);
         LOG.info(Arrays.toString(names));
 
-        final String[] rs = CollectionUtils.toArray(Collections.emptyList());
+        final String[] rs = CollectionHelper.toArray(Collections.emptyList());
         LOG.info(Arrays.toString(rs));
     }
 

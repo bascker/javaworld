@@ -1,6 +1,6 @@
 package com.bascker.general.io.nio;
 
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import com.bascker.bsutil.FileUtils;
 import org.junit.After;
 import org.junit.Assert;
@@ -107,7 +107,7 @@ public class ChannelCases {
         buffer.flip();
         fcOut.write(buffer);
 
-        Assert.assertEquals("My name is bascker", CollectionUtils.toString(Files.readAllLines(tmp)));
+        Assert.assertEquals("My name is bascker", CollectionHelper.toString(Files.readAllLines(tmp)));
     }
 
     /**
@@ -133,7 +133,7 @@ public class ChannelCases {
             fcOut.write(buffer);
         }
 
-        LOG.info("TMP File Content: " + CollectionUtils.toString(Files.readAllLines(tmp)));
+        LOG.info("TMP File Content: " + CollectionHelper.toString(Files.readAllLines(tmp)));
     }
 
     @Test
@@ -170,7 +170,7 @@ public class ChannelCases {
         while (buffer.hasRemaining()) {
             rs.add(String.valueOf(buffer.get()));
         }
-        Assert.assertEquals("0 1 2 33 44 55 66 7 8 9", CollectionUtils.toString(rs));
+        Assert.assertEquals("0 1 2 33 44 55 66 7 8 9", CollectionHelper.toString(rs));
     }
 
 }

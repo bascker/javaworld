@@ -1,6 +1,6 @@
 package com.bascker.sample;
 
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import com.bascker.bsutil.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -101,7 +101,7 @@ public class ProducerConsumer implements Sample {
             while (!mShutdown) {
                 try {
                     Thread.sleep(3 * 1000);
-                    LOG.info("Queue: " + CollectionUtils.toString(mQueue) + ", Consumer.Take: " + mQueue.take());
+                    LOG.info("Queue: " + CollectionHelper.toString(mQueue) + ", Consumer.Take: " + mQueue.take());
                 } catch (InterruptedException e) {
                     LOG.error("NumberConsumer.run", e);
                 }

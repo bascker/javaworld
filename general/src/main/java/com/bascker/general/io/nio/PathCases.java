@@ -1,7 +1,7 @@
 package com.bascker.general.io.nio;
 
 import com.bascker.bsutil.CharsetUtils;
-import com.bascker.bsutil.CollectionUtils;
+import com.bascker.bsutil.CollectionHelper;
 import com.bascker.bsutil.FileUtils;
 import org.junit.Assert;
 import org.junit.Before;
@@ -65,7 +65,7 @@ public class PathCases {
     @Test
     public void testCreate () throws IOException, URISyntaxException {
         // 获取 resources 目录下文件
-        LOG.info(CollectionUtils.toString(Files.readAllLines(data, CharsetUtils.UTF8)));
+        LOG.info(CollectionHelper.toString(Files.readAllLines(data, CharsetUtils.UTF8)));
 
         // 获取 Home 目录
         LOG.info(Paths.get(System.getProperty("user.home")).toString());
@@ -101,7 +101,7 @@ public class PathCases {
         final DirectoryStream<Path> gifDirStream = Files.newDirectoryStream(img, "*{gif}");
         final List<String> gifNames = new ArrayList<>();
         gifDirStream.forEach(path -> gifNames.add(path.getFileName().toString()));
-        LOG.info("Gif: " + CollectionUtils.toString(gifNames));
+        LOG.info("Gif: " + CollectionHelper.toString(gifNames));
 
         // 自定义过滤器
         final DirectoryStream.Filter<Path> filter = path -> "1.jpg".equals(path.getFileName().toString());
