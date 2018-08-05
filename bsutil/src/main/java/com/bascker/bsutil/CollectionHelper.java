@@ -1,5 +1,7 @@
 package com.bascker.bsutil;
 
+import org.apache.commons.collections4.MapUtils;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
