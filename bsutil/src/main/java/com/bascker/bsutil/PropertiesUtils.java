@@ -113,7 +113,7 @@ public class PropertiesUtils {
      * @return
      */
     public static int getInt(final Properties props, final String key, final int defaultValue) {
-        return props.containsKey(key) ? CastUtil.castInt(props.getProperty(key)) : defaultValue;
+        return props.containsKey(key) ? CastUtils.castInt(props.getProperty(key)) : defaultValue;
     }
 
     /**
@@ -134,7 +134,7 @@ public class PropertiesUtils {
      * @return
      */
     public static boolean getBoolean(final Properties props, final String key, final boolean defaultValue) {
-        return props.containsKey(key) ? CastUtil.castBoolean(props.getProperty(key)) : defaultValue;
+        return props.containsKey(key) ? CastUtils.castBoolean(props.getProperty(key)) : defaultValue;
     }
 
     private PropertiesUtils () {}

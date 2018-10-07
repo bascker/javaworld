@@ -1,8 +1,17 @@
 package com.bascker.bsutil;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.*;
+import java.nio.file.DirectoryStream;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,11 +23,27 @@ import java.util.Set;
  */
 public class FileUtils {
 
+    public static Path getPath(final String filePath) throws FileNotFoundException {
+        if (StringUtils.isEmpty(filePath)) {
+            throw new FileNotFoundException("get file failure, the file is not found.");
+        }
+
+        return Paths.get(filePath);
+    }
+
+    public static File getFile(final String filePath) throws FileNotFoundException {
+        return getPath(filePath).toFile();
+    }
+
+    public static File getFile(final Path path) {
+        return path.toFile();
+    }
+
     public static String getFileType (final Path path) {
         final String filename = path.getFileName().toString();
         final int index = filename.indexOf(".");
 
-        return filename.substring(index);
+        return filename.substring(index + 1);
     }
 
     /**

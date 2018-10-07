@@ -9,7 +9,7 @@ import java.util.Objects;
  *
  * @author bascker
  */
-public class CastUtil {
+public class CastUtils {
 
     /**
      * 转为 String 类型，默认值为空串
@@ -109,6 +109,6 @@ public class CastUtil {
         return StringUtils.isNotEmpty(strValue) ? Boolean.valueOf(strValue) : defaultValue;
     }
 
-    private CastUtil() {}
+    private CastUtils() {}
 
 }
