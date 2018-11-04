@@ -68,6 +68,9 @@ public class EnhancerCases {
         Assert.assertEquals("nope, i don't like you", proxy.sayNo());
     }
 
+    /**
+     * 实现动态代理
+     */
     @Test
     public void methodInterceptor () {
         mEnhancer.setCallback((MethodInterceptor)(obj, method, args, proxy) -> {

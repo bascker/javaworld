@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * GamePlayer Proxy
+ * GamePlayer Proxy: JDK动态代理
  *
  * @author bascker
  */
