@@ -1,4 +1,4 @@
-package com.bascker.designpattern.proxy.v2;
+package com.bascker.designpattern.proxy.staticproxy.v2;
 
 import com.bascker.designpattern.proxy.bean.GamePlayer;
 import org.slf4j.Logger;

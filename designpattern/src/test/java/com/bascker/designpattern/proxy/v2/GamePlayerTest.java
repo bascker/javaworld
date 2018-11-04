@@ -1,5 +1,6 @@
 package com.bascker.designpattern.proxy.v2;
 
+import com.bascker.designpattern.proxy.staticproxy.v2.GamePlayerProxy;
 import org.junit.Test;
 
 /**

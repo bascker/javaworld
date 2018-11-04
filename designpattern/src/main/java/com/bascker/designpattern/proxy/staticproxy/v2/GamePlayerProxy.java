@@ -1,44 +1,44 @@
-package com.bascker.designpattern.proxy.v1;
+package com.bascker.designpattern.proxy.staticproxy.v2;
 
 import com.bascker.designpattern.proxy.bean.GamePlayer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * GamePlayer Proxy: 游戏代理
+ * Game Player Proxy
  *
  * @author bascker
  */
 public class GamePlayerProxy implements GamePlayer {
 
     private static final Logger LOG = LoggerFactory.getLogger(GamePlayerProxy.class);
-
-    // 被代理对象
     private GamePlayer mGamePlayer;
 
-    // 构造注入
-    public GamePlayerProxy(final GamePlayer gamePlayer) {
-        mGamePlayer = gamePlayer;
+    /**
+     * VS. v1.GamePlayerProxy: 只需要知道被代理对象的 username, password 即可进行代理
+     * @param username
+     * @param password
+     */
+    public GamePlayerProxy(final String username, final String password) {
+        try {
+            mGamePlayer = new DnfGamePlayer(this, username, password);
+        } catch (Exception e) {
+            LOG.error(e.getMessage());
+        }
     }
 
-    // -------------------------
-    // 代理行为
-    // -------------------------
     @Override
     public void login() {
-        LOG.info("proxy.login");
         mGamePlayer.login();
     }
 
     @Override
     public void killBoss() {
-        LOG.info("proxy.killBoss");
         mGamePlayer.killBoss();
     }
 
     @Override
     public void upgrade() {
-        LOG.info("proxy.upgrade");
         mGamePlayer.upgrade();
     }
 }

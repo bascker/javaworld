@@ -1,6 +1,7 @@
 package com.bascker.designpattern.proxy.v1;
 
 import com.bascker.designpattern.proxy.bean.DnfGamePlayer;
+import com.bascker.designpattern.proxy.staticproxy.v1.GamePlayerProxy;
 import org.junit.Test;
 
 /**
