@@ -9,6 +9,6 @@
     <context:component-scan base-package="com.bascker.springframework"/>
 
     <!-- 引入其他配置文件 -->
-    <import resource="aop.xml"/>
-
+    <import resource="aop-advice.xml"/>
+    <import resource="aop-advisor.xml"/>
 </beans>

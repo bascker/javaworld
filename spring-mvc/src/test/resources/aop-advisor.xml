@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置切面 -->
+    <!-- 切面是增强和切点的封装 -->
+    <bean id="apologyAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+        <!-- 增强 -->
+        <property name="advice" ref="aroundAdvice"/>
+        <!--
+            切点（正则表达式）, 拦截 byXXX 方法
+            切点即拦截条件
+         -->
+        <property name="pattern" value="com.bascker.springframework.service.impl.ApologyImpl.by.*"/>
+    </bean>
+
+    <!-- 配置代理 -->
+    <bean id="userProxy3" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!-- 目标类 -->
+        <property name="target" ref="apologyImpl"/>
+        <!-- 切面 -->
+        <property name="interceptorNames" value="apologyAdvisor"/>
+        <!-- 代理目标类 -->
+        <property name="proxyTargetClass" value="true"/>
+    </bean>
+
+</beans>
