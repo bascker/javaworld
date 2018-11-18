@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- AOP 增强 -->
+    <bean id="userProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!-- 需要代理的接口 -->
+        <property name="interfaces" value="com.bascker.springframework.service.UserService"/>
+        <!-- 接口实现类 -->
+        <property name="target" ref="userService"/>
+        <!-- 拦截器/增强器名称 -->
+        <property name="interceptorNames">
+            <list>
+                <value>aroundAdvice</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 引入增强 -->
+    <bean id="userProxy2" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!-- 需要动态实现的接口 Apology -->
+        <property name="interfaces" value="com.bascker.springframework.service.Apology"/>
+        <!-- 目标类 UserServiceImpl -->
+        <property name="target" ref="userService"/>
+        <!-- 引入增强 -->
+        <property name="interceptorNames" value="introAdvice"/>
+        <!--
+            表明是否代理目标类
+            默认为 false：代理接口，此时使用的是 JDK 动态代理
+            若值为 true：代理类，此时使用的是 CGLib 动态代理
+        -->
+        <property name="proxyTargetClass" value="true"/>
+    </bean>
+
+</beans>

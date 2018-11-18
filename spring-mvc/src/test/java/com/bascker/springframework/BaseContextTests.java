@@ -1,4 +1,4 @@
-package com.bascker.springframework.interceptor;
+package com.bascker.springframework;
 
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;

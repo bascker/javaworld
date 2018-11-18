@@ -7,9 +7,9 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
+    <!-- 拦截器 -->
     <bean id="timeInterceptor" class="com.bascker.springframework.interceptor.TimeInterceptor"/>
 
-    <!-- 拦截器 -->
     <aop:config proxy-target-class="true">
         <aop:aspect id="time" ref="timeInterceptor">
             <aop:pointcut id="all" expression="execution(* com.bascker.springframework.*(..))"/>

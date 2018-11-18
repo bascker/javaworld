@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  *
  * @author bascker
  */
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
     @Autowired
