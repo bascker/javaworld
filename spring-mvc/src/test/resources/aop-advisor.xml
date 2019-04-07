@@ -6,6 +6,13 @@
 
     <!-- 配置切面 -->
     <!-- 切面是增强和切点的封装 -->
+    <!--
+        Spring AOP 切面类：
+        1. RegexpMethodPointcutAdvisor：基于正则表达式的切面类
+        2. DefaultPointcutAdvisor：默认切面，可扩展它来自定义切面类
+        3. NameMatchMethodPointcutAdvisor：根据方法名称匹配的切面类
+        4. StaticMethodMatcherPointcutAdvisor：用于匹配静态方法的切面类
+     -->
     <bean id="apologyAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
         <!-- 增强 -->
         <property name="advice" ref="aroundAdvice"/>
