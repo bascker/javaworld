@@ -20,8 +20,6 @@ import static org.testng.Assert.*;
 @Test
 public class OptinalCases {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(OptinalCases.class);
-
     /**
      * 测试创建 Optional 对象的方式
      */
