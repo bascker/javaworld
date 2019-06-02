@@ -51,7 +51,7 @@ public class Person {
         mGithub = builder.mGithub;
     }
 
-    static class Builder {
+    public static class Builder {
         // required fields
         private String mName;
         private int mAge;
