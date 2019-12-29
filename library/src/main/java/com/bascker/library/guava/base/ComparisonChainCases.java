@@ -11,7 +11,7 @@ import java.util.function.BiFunction;
 import static org.testng.Assert.assertEquals;
 
 /**
- * ComparasionChain 的使用: 比较器，流式调用可以简化 Comparable 接口实现。
+ * ComparisionChain 的使用: 比较器，流式调用可以简化 Comparable 接口实现。
  *
  * @author bascker
  */

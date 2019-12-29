@@ -18,7 +18,7 @@ import static org.testng.Assert.*;
  * @author bascker
  */
 @Test
-public class OptinalCases {
+public class OptionalCases {
 
     /**
      * 测试创建 Optional 对象的方式
