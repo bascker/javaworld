@@ -16,6 +16,7 @@
         <module>designpattern</module>
         <module>wechat</module>
         <module>spring-mvc</module>
+        <module>exam</module>
     </modules>
     <name>The road of learning Java</name>
     <url>http://maven.apache.org</url>
