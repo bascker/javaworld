@@ -31,7 +31,7 @@
 
         <!--commons-->
         <commons.lang3.version>3.4</commons.lang3.version>
-        <commons.io.version>2.4</commons.io.version>
+        <commons.io.version>2.7</commons.io.version>
         <commons.collections4.version>4.1</commons.collections4.version>
 
         <!-- log -->
