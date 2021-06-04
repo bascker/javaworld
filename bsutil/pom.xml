@@ -13,7 +13,7 @@
     <artifactId>bs-util</artifactId>
 
     <properties>
-        <httpclient.version>4.5.2</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <poi.version>3.17</poi.version>
     </properties>
 
