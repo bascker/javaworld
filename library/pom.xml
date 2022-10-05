@@ -28,7 +28,7 @@
 
         <jackson.version>2.8.8</jackson.version>
         <jackson.core.version>${jackson.version}</jackson.core.version>
-        <jackson.databind.version>${jackson.version}</jackson.databind.version>
+        <jackson.databind.version>2.12.6.1</jackson.databind.version>
         <jackson.annotations.version>${jackson.version}</jackson.annotations.version>
 
         <jsoup.version>1.10.2</jsoup.version>
